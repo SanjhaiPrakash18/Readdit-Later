@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readdit Later - Detailed View</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rethink Sans', sans-serif;
+            background: #f8f9fa;
+            color: #1a1a1b;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff4500;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-family: 'Rethink Sans', sans-serif;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            border-color: #ff4500;
+            color: #ff4500;
+        }
+
+        .export-btn {
+            background: #ff4500;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 16px;
+            cursor: pointer;
+            font-family: 'Rethink Sans', sans-serif;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .export-btn:hover {
+            background: #e03d00;
+            transform: translateY(-1px);
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            height: fit-content;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 100px;
+        }
+
+        .stats-section {
+            margin-bottom: 30px;
+        }
+
+        .stats-section h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a1b;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #7c7c83;
+            font-size: 14px;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: #ff4500;
+        }
+
+        .filters-section h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a1b;
+        }
+
+        .filter-group {
+            margin-bottom: 20px;
+        }
+
+        .filter-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #1a1a1b;
+        }
+
+        .filter-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-family: 'Rethink Sans', sans-serif;
+            font-size: 14px;
+            transition: border-color 0.2s ease;
+        }
+
+        .filter-input:focus {
+            outline: none;
+            border-color: #ff4500;
+        }
+
+        .filter-select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-family: 'Rethink Sans', sans-serif;
+            font-size: 14px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .clear-filters {
+            width: 100%;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            color: #7c7c83;
+            padding: 8px;
+            border-radius: 6px;
+            font-family: 'Rethink Sans', sans-serif;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .clear-filters:hover {
+            background: #e9ecef;
+        }
+
+        .content-area {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .content-header {
+            padding: 24px 30px;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .content-header h1 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a1a1b;
+        }
+
+        .view-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .view-toggle {
+            display: flex;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 4px;
+        }
+
+        .view-btn {
+            background: none;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Rethink Sans', sans-serif;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .view-btn.active {
+            background: white;
+            color: #ff4500;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .sort-select {
+            padding: 8px 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            font-family: 'Rethink Sans', sans-serif;
+            font-size: 14px;
+            background: white;
+        }
+
+        .posts-container {
+            padding: 20px 30px 30px;
+        }
+
+        .loading-container {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #ff4500;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .post-item {
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            padding: 20px;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .post-item:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .post-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1b;
+            line-height: 1.4;
+            margin-bottom: 8px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .post-title:hover {
+            color: #ff4500;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            color: #7c7c83;
+            margin-bottom: 12px;
+        }
+
+        .subreddit-link {
+            color: #0079d3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .subreddit-link:hover {
+            text-decoration: underline;
+        }
+
+        .post-stats {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #7c7c83;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-btn {
+            background: none;
+            border: 2px solid #e9ecef;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Rethink Sans', sans-serif;
+            font-size: 12px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .action-btn:hover {
+            border-color: #ff4500;
+            color: #ff4500;
+        }
+
+        .action-btn.danger:hover {
+            border-color: #dc3545;
+            color: #dc3545;
+        }
+
+        .post-thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-left: 16px;
+        }
+
+        .post-content {
+            flex: 1;
+        }
+
+        .post-item.grid-view {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: #7c7c83;
+        }
+
+        .empty-state h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #1a1a1b;
+        }
+
+        .empty-state p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding: 20px;
+        }
+
+        .page-btn {
+            background: white;
+            border: 2px solid #e9ecef;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Rethink Sans', sans-serif;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .page-btn:hover:not(:disabled) {
+            border-color: #ff4500;
+            color: #ff4500;
+        }
+
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .page-btn.active {
+            background: #ff4500;
+            color: white;
+            border-color: #ff4500;
+        }
+
+        /* Dark theme */
+        body.dark {
+            background: #030303;
+            color: #d7dadc;
+        }
+
+        body.dark .header {
+            background: #1a1a1b;
+            border-bottom: 1px solid #343536;
+        }
+
+        body.dark .sidebar,
+        body.dark .content-area,
+        body.dark .post-item {
+            background: #1a1a1b;
+            border-color: #343536;
+        }
+
+        body.dark .filter-input,
+        body.dark .filter-select,
+        body.dark .sort-select {
+            background: #1a1a1b;
+            border-color: #343536;
+            color: #d7dadc;
+        }
+
+        body.dark .post-title {
+            color: #d7dadc;
+        }
+
+        body.dark .post-title:hover {
+            color: #ff4500;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .content-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .view-controls {
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="icons/logo.png" alt="Readdit Later Logo">
+                <h1>Readdit Later</h1>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggle" class="theme-toggle">Dark</button>
+                <button id="exportBtn" class="export-btn">Export</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="stats-section">
+                <h2>Statistics</h2>
+                <div class="stat-item">
+                    <span class="stat-label">Total Posts</span>
+                    <span class="stat-value" id="totalPostsStat">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">This Week</span>
+                    <span class="stat-value" id="weeklyPostsStat">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Subreddits</span>
+                    <span class="stat-value" id="subredditsStat">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Last Sync</span>
+                    <span class="stat-value" id="lastSyncStat">Never</span>
+                </div>
+            </div>
+
+            <div class="filters-section">
+                <h2>Filters</h2>
+                
+                <div class="filter-group">
+                    <label class="filter-label">Search</label>
+                    <input type="text" id="searchInput" class="filter-input" placeholder="Search posts...">
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Subreddit</label>
+                    <select id="subredditFilter" class="filter-select">
+                        <option value="">All Subreddits</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Post Type</label>
+                    <select id="typeFilter" class="filter-select">
+                        <option value="">All Types</option>
+                        <option value="link">Links</option>
+                        <option value="image">Images</option>
+                        <option value="video">Videos</option>
+                        <option value="text">Text Posts</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Time Period</label>
+                    <select id="timeFilter" class="filter-select">
+                        <option value="">All Time</option>
+                        <option value="day">Last 24 Hours</option>
+                        <option value="week">Last Week</option>
+                        <option value="month">Last Month</option>
+                        <option value="year">Last Year</option>
+                    </select>
+                </div>
+
+                <button id="clearFilters" class="clear-filters">Clear All Filters</button>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <div class="content-header">
+                <h1 id="contentTitle">Your Saved Posts</h1>
+                <div class="view-controls">
+                    <div class="view-toggle">
+                        <button id="listViewBtn" class="view-btn active">List</button>
+                        <button id="gridViewBtn" class="view-btn">Grid</button>
+                    </div>
+                    <select id="sortSelect" class="sort-select">
+                        <option value="date_desc">Newest First</option>
+                        <option value="date_asc">Oldest First</option>
+                        <option value="title_asc">Title A-Z</option>
+                        <option value="title_desc">Title Z-A</option>
+                        <option value="subreddit_asc">Subreddit A-Z</option>
+                        <option value="score_desc">Highest Score</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="posts-container">
+                <div id="loadingContainer" class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <p>Loading your saved posts...</p>
+                </div>
+
+                <div id="postsContainer">
+                    <!-- Posts will be dynamically loaded here -->
+                </div>
+
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <h2>No posts found</h2>
+                    <p>Try adjusting your filters or save some posts on Reddit to get started!</p>
+                </div>
+
+                <div id="pagination" class="pagination" style="display: none;">
+                    <button id="prevPageBtn" class="page-btn">← Previous</button>
+                    <span id="pageInfo" class="page-info">Page 1 of 1</span>
+                    <button id="nextPageBtn" class="page-btn">Next →</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="detailed-view.js"></script>
+</body>
+</html>
