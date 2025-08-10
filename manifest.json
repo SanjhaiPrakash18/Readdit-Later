@@ -3,6 +3,7 @@
   "name": "Readdit Later",
   "version": "1.0.4",
   "description": "Save and manage your Reddit posts with ease",
+  "homepage_url": "https://sanjhaiprakash18.github.io/Readdit-Later/",
   "permissions": [
     "storage",
     "tabs",

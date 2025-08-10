@@ -1,36 +1,43 @@
 const express = require('express');
 const cors = require('cors');
-const axios = require('axios'); // Added axios
-const bodyParser = require('body-parser'); // Added body-parser
+const axios = require('axios');
+const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// IMPORTANT: Replace 'chrome-extension://YOUR_EXTENSION_ID' with your actual extension ID.
-// You can find your extension ID in chrome://extensions
+// Read from environment variables
+const CLIENT_ID = process.env.REDDIT_CLIENT_ID;
+const CLIENT_SECRET = process.env.REDDIT_CLIENT_SECRET;
+const REDIRECT_URI = process.env.REDDIT_REDIRECT_URI || 'https://jpfhhhilbgphfpboemobmnjejaojgmcg.chromiumapp.org';
+const EXTENSION_ID = process.env.CHROME_EXTENSION_ID || 'jpfhhhilbgphfpboemobmnjejaojgmcg';
+
 const corsOptions = {
-  origin: 'chrome-extension://jpfhhhilbgphfpboemobmnjejaojgmcg', 
+  origin: `chrome-extension://${EXTENSION_ID}`,
   optionsSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));
-app.use(bodyParser.json()); // Use body-parser to parse JSON requests
-app.use(bodyParser.urlencoded({ extended: true })); // Use body-parser to parse URL-encoded requests
-
-// IMPORTANT: Replace with your actual Reddit Client ID and Client Secret
-const CLIENT_ID = '1X-1i_wfkj2WkhucarxvFw';
-const CLIENT_SECRET = 't4CVp_1qaUG_Hu0_2T1C-9q4p6iMoA'; // <<< REPLACE THIS WITH YOUR ACTUAL CLIENT SECRET
-const REDIRECT_URI = 'https://jpfhhhilbgphfpboemobmnjejaojgmcg.chromiumapp.org';
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/config', (req, res) => {
+  if (!CLIENT_ID) {
+    console.error('REDDIT_CLIENT_ID environment variable is not set.');
+    return res.status(500).json({ error: 'Server configuration error: Client ID not set.' });
+  }
   res.json({ clientId: CLIENT_ID });
 });
 
-// New endpoint to handle token exchange
 app.post('/exchange-token', async (req, res) => {
   const { code, code_verifier } = req.body;
 
   if (!code || !code_verifier) {
     return res.status(400).json({ error: 'Missing code or code_verifier' });
+  }
+
+  if (!CLIENT_ID || !CLIENT_SECRET) {
+    console.error('REDDIT_CLIENT_ID or REDDIT_CLIENT_SECRET environment variable is not set.');
+    return res.status(500).json({ error: 'Server configuration error: Client ID or Secret not set.' });
   }
 
   try {
@@ -46,7 +53,7 @@ app.post('/exchange-token', async (req, res) => {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           'Authorization': `Basic ${Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64')}`,
-          'User-Agent': 'chrome-extension:readdit-later:v1.0.3 (by /u/Appropriate-Look-875)' // Use a descriptive User-Agent
+          'User-Agent': 'chrome-extension:readdit-later:v1.0.3 (by /u/Appropriate-Look-875)'
         }
       }
     );
