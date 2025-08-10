@@ -7,275 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            width: 400px;
-            height: 600px;
-            font-family: 'Rethink Sans', sans-serif;
-            background: #ffffff;
-            color: #1a1a1b;
-            overflow-x: hidden;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #ff4500, #ff6b35);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(255, 69, 0, 0.2);
-        }
-
-        .header .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 5px;
-        }
-
-        .header .logo img {
-            width: 32px;
-            height: 32px;
-            border-radius: 10px;
-        }
-
-        .header h1 {
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .header p {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        .loading-state {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #ff4500;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 15px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .auth-section {
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        .auth-button {
-            background: #ff4500;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-family: 'Rethink Sans', sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
-        }
-
-        .auth-button:hover {
-            background: #e03d00;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(255, 69, 0, 0.4);
-        }
-
-        .analytics {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #e9ecef;
-        }
-
-        .analytics h2 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #1a1a1b;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .stat-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
-        }
-
-        .stat-number {
-            font-size: 24px;
-            font-weight: 700;
-            color: #ff4500;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 12px;
-            color: #7c7c83;
-            font-weight: 500;
-        }
-
-        .top-subreddit {
-            background: white;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
-            text-align: center;
-        }
-
-        .subreddit-name {
-            font-weight: 600;
-            color: #0079d3;
-            margin-bottom: 5px;
-        }
-
-        .recent-saves {
-            margin-bottom: 20px;
-        }
-
-        .recent-saves h2 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #1a1a1b;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .recent-item {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 12px;
-            margin-bottom: 10px;
-            border-left: 4px solid #ff4500;
-            transition: all 0.2s ease;
-        }
-
-        .recent-item:hover {
-            background: #e9ecef;
-            transform: translateX(2px);
-        }
-
-        .recent-title {
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 5px;
-            color: #1a1a1b;
-            line-height: 1.3;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            line-clamp: 2; /* Standard property for compatibility */
-            overflow: hidden;
-        }
-
-        .recent-meta {
-            font-size: 12px;
-            color: #7c7c83;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .subreddit {
-            color: #0079d3;
-            font-weight: 500;
-        }
-
-        .detailed-view-button {
-            width: 100%;
-            background: linear-gradient(135deg, #ff4500, #ff6b35);
-            color: white;
-            border: none;
-            padding: 16px;
-            border-radius: 12px;
-            font-family: 'Rethink Sans', sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 16px rgba(255, 69, 0, 0.3);
-            margin-top: 10px;
-        }
-
-        .detailed-view-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 69, 0, 0.4);
-        }
-
-        .detailed-view-button:active {
-            transform: translateY(0);
-        }
-
-        .error-message {
-            background: #ffe6e6;
-            color: #d63384;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #f5c6cb;
-            font-size: 14px;
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 40px 20px;
-            color: #7c7c83;
-        }
-
-        .empty-state h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #1a1a1b;
-        }
-
-        .empty-state p {
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        /* Fallback for browsers that don't support line-clamp */
-        @supports not (line-clamp: 2) {
-            .recent-title {
-                max-height: 2.6em; /* Approximate height for 2 lines */
-                text-overflow: ellipsis;
-            }
-        }
-    </style>
+        <link rel="stylesheet" href="popup.css">
 </head>
 <body>
     <div class="header">
@@ -297,30 +29,60 @@
         <div id="authSection" class="auth-section" style="display: none;">
             <h3 style="margin-bottom: 15px; color: #1a1a1b;">Connect to Reddit</h3>
             <p style="margin-bottom: 20px; color: #7c7c83; font-size: 14px;">Sign in to view and manage your saved posts</p>
-            <button id="authButton" class="auth-button">Connect Reddit Account</button>
+            <div style="text-align: center;">
+                <button id="authButton" class="auth-button" type="button">
+                    Connect Reddit Account
+                </button>
+            </div>
+            <p style="margin-top: 15px; font-size: 12px; color: #7c7c83;">
+                This will open Reddit's authorization page in a new tab
+            </p>
         </div>
 
         <!-- Error Message -->
         <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+        <!-- Extension Status -->
+        <div id="extensionStatus" class="extension-status" style="display: none;">
+            <p><strong>Extension Status:</strong></p>
+            <div id="statusContent"></div>
+            <button id="reloadExtension" class="auth-button" style="margin-top: 10px;">Reload Extension</button>
+        </div>
+
+        <!-- Debug Info (only shown in development) -->
+        <div id="debugInfo" style="display: none; background: #f0f0f0; padding: 10px; font-size: 12px; margin-bottom: 10px; border-radius: 4px;">
+            <strong>Debug Info:</strong>
+            <div id="debugContent"></div>
+        </div>
 
         <!-- Main Content -->
         <div id="mainContent" style="display: none;">
             <!-- Analytics Section -->
             <div class="analytics">
                 <h2>Your Stats</h2>
-                <div class="stat-grid">
+                <div class="stats-list">
                     <div class="stat-item">
-                        <div id="totalPosts" class="stat-number">0</div>
-                        <div class="stat-label">Total Saved</div>
+                        <span class="stat-label">Total Saved Posts</span>
+                        <span id="totalPosts" class="stat-number">0</span>
                     </div>
                     <div class="stat-item">
-                        <div id="weeklyPosts" class="stat-number">0</div>
-                        <div class="stat-label">This Week</div>
+                        <span class="stat-label">Posts Saved This Week</span>
+                        <span id="weeklyPosts" class="stat-number">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Total Subreddits</span>
+                        <span id="totalSubreddits" class="stat-number">0</span>
                     </div>
                 </div>
-                <div class="top-subreddit">
-                    <div class="subreddit-name" id="topSubreddit">r/loading...</div>
-                    <div class="stat-label" id="topSubredditCount">0 posts</div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button id="detailedViewButton" class="action-button">
+                        Open Detailed View
+                    </button>
+                    <button id="syncButton" class="action-button">
+                        Sync Posts Now
+                    </button>
                 </div>
             </div>
 
@@ -331,17 +93,17 @@
                     <!-- Recent posts will be populated here -->
                 </div>
             </div>
-
-            <!-- Detailed View Button -->
-            <button id="detailedViewButton" class="detailed-view-button">
-                Open Detailed View →
-            </button>
         </div>
 
         <!-- Empty State -->
         <div id="emptyState" class="empty-state" style="display: none;">
             <h3>No saved posts yet</h3>
             <p>Start saving interesting Reddit posts and they'll appear here with analytics and management tools!</p>
+        </div>
+
+        <!-- Support Link -->
+        <div class="support-link-container">
+            <a href="mailto:sanjhaiprakash18@gmail.com" class="support-link">Need Help?</a>
         </div>
     </div>
 

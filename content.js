@@ -160,6 +160,23 @@ class RedditEnhancer {
         }
     }
 
+    getButtonIcon(isSaved) {
+        const iconColor = getComputedStyle(document.body).getPropertyValue('color') || '#000';
+        if (isSaved) {
+            return `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ff4500" stroke="#ff4500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="readdit-later-icon">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Saved</span>`;
+        } else {
+            return `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="${iconColor}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="readdit-later-icon">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Save</span>`;
+        }
+    }
+
     addQuickActionButton(postElement, postId) {
         // Add a quick action button for Readdit Later
         const actionBar = this.findActionBar(postElement);
@@ -167,10 +184,12 @@ class RedditEnhancer {
 
         const button = document.createElement('button');
         button.className = 'readdit-later-quick-action';
-        button.innerHTML = this.savedPosts.has(postId) 
-            ? 'In Readdit Later' 
-            : 'Add to Readdit Later';
-        
+
+        const isSaved = this.savedPosts.has(postId);
+        button.innerHTML = this.getButtonIcon(isSaved);
+        button.setAttribute('aria-label', isSaved ? 'Unsave from Readdit Later' : 'Save to Readdit Later');
+        button.title = isSaved ? 'Unsave from Readdit Later' : 'Save to Readdit Later';
+
         button.onclick = (e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -215,19 +234,31 @@ class RedditEnhancer {
     }
 
     async addToReadditLater(postId, postElement) {
-        // Find and click the native save button
         const saveButton = this.findSaveButton(postElement);
         if (saveButton && !this.isPostSaved(saveButton)) {
             saveButton.click();
-            
-            // Wait a bit and then sync
+
             setTimeout(() => {
+                const postData = PostDataExtractor.extractPostData(postElement);
+                postData.id = postId; 
+
+                chrome.runtime.sendMessage({
+                    type: 'SAVE_POST_DATA',
+                    postId: postId,
+                    postData: postData
+                }).catch(err => console.error("Error sending post data:", err));
+
                 this.syncWithBackground();
-            }, 1000);
-            
+            }, 500);
+
             this.showMessage('Added to Readdit Later!', 'success');
-        } else {
+            this.savedPosts.add(postId);
+            this.updatePostUI(postElement, postId, true);
+
+        } else if (saveButton && this.isPostSaved(saveButton)) {
             this.showMessage('Post is already saved', 'info');
+        } else {
+            this.showMessage('Could not find save button', 'error');
         }
     }
 
@@ -243,9 +274,7 @@ class RedditEnhancer {
             // Update UI
             this.updatePostUI(postElement, postId, false);
             
-            setTimeout(() => {
-                this.syncWithBackground();
-            }, 1000);
+            this.syncWithBackground();
             
             this.showMessage('Removed from Readdit Later', 'info');
         }
@@ -278,9 +307,9 @@ class RedditEnhancer {
         // Update quick action button
         const quickButton = postElement.querySelector('.readdit-later-quick-action');
         if (quickButton) {
-            quickButton.innerHTML = isSaved 
-                ? 'In Readdit Later' 
-                : 'Add to Readdit Later';
+            quickButton.innerHTML = this.getButtonIcon(isSaved);
+            quickButton.setAttribute('aria-label', isSaved ? 'Unsave from Readdit Later' : 'Save to Readdit Later');
+            quickButton.title = isSaved ? 'Unsave from Readdit Later' : 'Save to Readdit Later';
         }
 
         // Update/remove saved indicator
@@ -369,23 +398,28 @@ class RedditEnhancer {
             }
 
             .readdit-later-quick-action {
-                background: #f8f9fa;
-                border: 1px solid #e9ecef;
-                color: #495057;
+                background: transparent;
+                border: none;
+                color: inherit;
                 font-size: 12px;
-                font-weight: 500;
+                font-weight: 600;
                 padding: 4px 8px;
                 border-radius: 6px;
                 cursor: pointer;
                 margin-left: 8px;
                 font-family: 'Rethink Sans', -apple-system, BlinkMacSystemFont, sans-serif;
                 transition: all 0.2s ease;
+                display: flex;
+                align-items: center;
             }
 
             .readdit-later-quick-action:hover {
-                background: #e9ecef;
-                border-color: #ff4500;
+                background: rgba(255, 69, 0, 0.1);
                 color: #ff4500;
+            }
+            
+            .readdit-later-quick-action .readdit-later-icon {
+                margin-right: 6px;
             }
 
             .readdit-later-message {
@@ -433,14 +467,11 @@ class RedditEnhancer {
 
             /* Dark theme support */
             [data-theme="dark"] .readdit-later-quick-action {
-                background: #2d3748;
-                border-color: #4a5568;
                 color: #e2e8f0;
             }
 
             [data-theme="dark"] .readdit-later-quick-action:hover {
-                background: #4a5568;
-                border-color: #ff4500;
+                background: rgba(255, 69, 0, 0.15);
                 color: #ff4500;
             }
 
@@ -472,6 +503,7 @@ class RedditEnhancer {
     }
 }
 
+
 // Enhanced post data extraction for better compatibility
 class PostDataExtractor {
     static extractPostData(postElement) {
@@ -495,22 +527,29 @@ class PostDataExtractor {
             }
             
             // Extract score
-            const scoreElement = postElement.querySelector('[data-testid="vote-arrows"] span, .score');
+            const scoreElement = postElement.querySelector('[data-testid="post-score"], .score, [id^="vote-arrows"] + div');
             if (scoreElement) {
                 const scoreText = scoreElement.textContent.trim();
                 data.score = this.parseScore(scoreText);
             }
             
             // Extract comments count
-            const commentsElement = postElement.querySelector('[data-testid="comments-page-link"], .comments');
+            const commentsElement = postElement.querySelector('[data-testid="comments-count"], .comments, a[data-click-id="comments"]');
             if (commentsElement) {
                 const commentsText = commentsElement.textContent;
                 const match = commentsText.match(/(\d+)/);
                 data.num_comments = match ? parseInt(match[1]) : 0;
             }
             
+            // Extract post creation time (created_utc)
+            const timeElement = postElement.querySelector('time[datetime]');
+            if (timeElement) {
+                const datetime = timeElement.getAttribute('datetime');
+                data.created_utc = new Date(datetime).getTime() / 1000; // Convert to Unix timestamp
+            }
+            
             // Extract permalink
-            const permalinkElement = postElement.querySelector('a[href*="/comments/"]');
+            const permalinkElement = postElement.querySelector('a[data-click-id="comments"], a[href*="/comments/"]');
             if (permalinkElement) {
                 data.permalink = permalinkElement.pathname;
             }
