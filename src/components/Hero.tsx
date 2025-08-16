@@ -93,21 +93,25 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button 
-              variant="hero" 
-              size="default" 
-              className="px-6 py-3 text-white"
-              style={{ backgroundColor: '#000000' }}
-              onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
-            >
-              <img
-                src="/Chrome SVG.svg"
-                alt="Chrome"
-                className="h-4 w-4 mr-2"
-                style={{ display: "inline-block", verticalAlign: "middle", background color:"#ffffff"}}
-              />
-              Add to Chrome - Free
-            </Button>
+           <Button 
+  variant="hero" 
+  size="default" 
+  className="px-6 py-3 text-white"
+  style={{ backgroundColor: '#000000' }}
+  onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
+>
+  <img
+    src="/Chrome SVG.svg"
+    alt="Chrome"
+    className="h-4 w-4 mr-2"
+    style={{ 
+      display: "inline-block", 
+      verticalAlign: "middle", 
+      backgroundColor: "#ffffff"
+    }}
+  />
+  Add to Chrome - Free
+</Button>
             <Button 
               variant="outline" 
               size="default"
