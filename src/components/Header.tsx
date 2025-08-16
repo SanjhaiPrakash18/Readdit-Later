@@ -39,7 +39,8 @@ const Header = () => {
           <Button 
             variant="hero" 
             size="default"
-            className="shadow-primary"
+            className="text-white hover:bg-gray-800"
+            style={{ backgroundColor: '#000000' }}
             onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
           >
             <ExternalLink className="h-4 w-4" />
@@ -69,7 +70,8 @@ const Header = () => {
                 <Button 
                   variant="hero" 
                   size="default"
-                  className="shadow-primary mt-4"
+                  className="text-white hover:bg-gray-800 mt-4"
+                  style={{ backgroundColor: '#000000' }}
                   onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
                 >
                   <ExternalLink className="h-4 w-4" />
