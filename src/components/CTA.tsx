@@ -15,7 +15,10 @@ const CTA = () => {
       
       <div className="relative z-10">
         <div className="container">
-          <Card className="max-w-4xl mx-auto shadow-primary border-primary/20">
+          <Card 
+            className="max-w-4xl mx-auto shadow-primary" 
+            style={{ border: "1px solid #e5e7eb" }}
+          >
             <CardContent className="p-12 text-center">
               <div className="mb-8">
                 <div className="flex justify-center mb-4">
