@@ -32,11 +32,15 @@ const Hero = () => {
 
           {/* Demo Video */}
           <div className="w-full max-w-4xl mx-auto mb-8">
-            <div className="aspect-video bg-muted rounded-lg border-2 border-dashed border-border flex items-center justify-center">
-              <div className="text-center">
-                <p className="text-muted-foreground mb-2">Demo Video Placeholder</p>
-                <p className="text-sm text-muted-foreground">1920x1080 resolution</p>
-              </div>
+            <div className="aspect-video bg-muted rounded-lg border-2 border-dashed border-border flex items-center justify-center overflow-hidden">
+              <video
+                src="/Land Page Read Lat 1.mp4"
+                controls
+                className="w-full h-full object-cover rounded-lg"
+                // poster="/video-poster.jpg" // Optional: add a poster image in public folder
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
 
