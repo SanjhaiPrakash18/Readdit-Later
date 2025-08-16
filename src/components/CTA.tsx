@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink, Download, Star } from "lucide-react";
+import { Download, Star } from "lucide-react";
 
 const CTA = () => {
   return (
@@ -43,28 +43,15 @@ const CTA = () => {
                   Join the growing community of organized Reddit users. Install Readdit Later now and never lose track of great content again.
                 </p>
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <div className="flex justify-center mb-8">
                 <Button 
-                  variant="hero" 
-                  size="default" 
-                  className="px-6 py-3"
+                  className="px-6 py-3 bg-black hover:bg-gray-800 text-white"
                   onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
                 >
                   <Download className="h-4 w-4 mr-2" />
                   Install Free Extension
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="default"
-                  className="px-6 py-3"
-                  onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
-                >
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View on Chrome Store
-                </Button>
               </div>
-
               <div className="flex justify-center items-center gap-2 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
