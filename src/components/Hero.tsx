@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden bg-white">
+    <section className="relative py-20 lg:py-32 overflow-hidden" style={{ backgroundColor: '#ffffff' }}>
       {/* Background gradient */}
       <div className="absolute inset-0 gradient-hero opacity-5"></div>
       
@@ -77,7 +77,8 @@ const Hero = () => {
             <Button 
               variant="hero" 
               size="default" 
-              className="px-6 py-3"
+              className="px-6 py-3 text-white"
+              style={{ backgroundColor: '#000000' }}
               onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
             >
               <ExternalLink className="h-4 w-4 mr-2" />
