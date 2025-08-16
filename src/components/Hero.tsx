@@ -19,7 +19,29 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden" style={{ backgroundColor: '#ffffff' }}>
+    <section 
+      className="relative py-20 lg:py-32 overflow-hidden" 
+      style={{ 
+        backgroundColor: '#ffffff',
+        backgroundImage: `radial-gradient(circle, #e5e7eb 1px, transparent 1px)`,
+        backgroundSize: '24px 24px'
+      }}
+    >
+      {/* Alternative dotted patterns - uncomment one to try different styles */}
+      {/* 
+      // Fine dots:
+      backgroundImage: `radial-gradient(circle, #d1d5db 0.5px, transparent 0.5px)`,
+      backgroundSize: '16px 16px'
+      
+      // Large subtle dots:
+      backgroundImage: `radial-gradient(circle, #f3f4f6 2px, transparent 2px)`,
+      backgroundSize: '32px 32px'
+      
+      // Colorful dots (using your primary color):
+      backgroundImage: `radial-gradient(circle, rgba(59, 130, 246, 0.1) 1px, transparent 1px)`,
+      backgroundSize: '24px 24px'
+      */}
+      
       <div className="container relative z-10">
         <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
           {/* Badge */}
