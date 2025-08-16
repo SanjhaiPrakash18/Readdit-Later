@@ -1,8 +1,23 @@
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Star } from "lucide-react";
+import { ExternalLink, Star, Play, Pause } from "lucide-react";
 
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(true);
+
+  const handlePlayPause = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setPlaying(false);
+    }
+  };
+
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
       {/* Background gradient */}
@@ -32,18 +47,28 @@ const Hero = () => {
 
           {/* Demo Video */}
           <div className="w-full max-w-4xl mx-auto mb-8">
-            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center overflow-hidden">
+            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center overflow-hidden relative group">
               <video
+                ref={videoRef}
                 src="/Land Page Read Lat 1.mp4"
-                controls
                 loop
                 autoPlay
                 muted
-                className="w-full h-full object-cover rounded-lg"
-                // poster="/video-poster.jpg" // Optional: add a poster image in public folder
+                className="w-full h-full object-cover rounded-lg pointer-events-none"
+                // poster="/video-poster.jpg"
               >
                 Your browser does not support the video tag.
               </video>
+              {/* Custom play/pause button overlay, visible on hover */}
+              <button
+                type="button"
+                aria-label={playing ? "Pause video" : "Play video"}
+                onClick={handlePlayPause}
+                className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 bg-black/60 rounded-full p-2 transition-opacity"
+                tabIndex={0}
+              >
+                {playing ? <Pause className="w-6 h-6 text-white" /> : <Play className="w-6 h-6 text-white" />}
+              </button>
             </div>
           </div>
 
