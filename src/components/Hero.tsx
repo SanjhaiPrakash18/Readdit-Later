@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
+    <section className="relative py-20 lg:py-32 overflow-hidden bg-white">
       {/* Background gradient */}
       <div className="absolute inset-0 gradient-hero opacity-5"></div>
       
