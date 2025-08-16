@@ -17,7 +17,12 @@ const CTA = () => {
         <div className="container">
           <Card 
             className="max-w-4xl mx-auto shadow-primary" 
-            style={{ border: "1px solid #e5e7eb" }}
+            style={{
+              borderTop: "1px solid #e5e7eb",
+              borderRight: "1px solid #e5e7eb",
+              borderBottom: "1px solid #e5e7eb",
+              borderLeft: "1px solid #e5e7eb",
+            }}
           >
             <CardContent className="p-12 text-center">
               <div className="mb-8">
