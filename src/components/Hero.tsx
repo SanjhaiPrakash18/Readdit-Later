@@ -100,7 +100,12 @@ const Hero = () => {
               style={{ backgroundColor: '#000000' }}
               onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
             >
-              <ExternalLink className="h-4 w-4 mr-2" />
+              <img
+                src="/Chrome SVG.svg"
+                alt="Chrome"
+                className="h-4 w-4 mr-2"
+                style={{ display: "inline-block", verticalAlign: "middle" }}
+              />
               Add to Chrome - Free
             </Button>
             <Button 
