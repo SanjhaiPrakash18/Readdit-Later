@@ -20,8 +20,6 @@ const Hero = () => {
 
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden" style={{ backgroundColor: '#ffffff' }}>
-      {/* Background gradient */}
-      <div className="absolute inset-0 gradient-hero opacity-5"></div>
       
       <div className="container relative z-10">
         <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
