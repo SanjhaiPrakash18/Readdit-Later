@@ -29,7 +29,6 @@ const Pricing = () => {
             Get all features completely free. No hidden costs, no subscription required.
           </p>
         </div>
-
         <div className="max-w-md mx-auto">
           <Card className="shadow-card relative overflow-hidden">
             <div className="absolute top-4 right-4">
@@ -60,9 +59,8 @@ const Pricing = () => {
               </div>
               
               <Button 
-                variant="hero" 
                 size="lg" 
-                className="w-full"
+                className="w-full bg-black hover:bg-gray-800 text-white"
                 onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
               >
                 <ExternalLink className="h-4 w-4 mr-2" />
