@@ -42,7 +42,7 @@ const benefits = [
 
 const Benefits = () => {
   return (
-    <section className="py-20 lg:py-32">
+    <section id="benefits" className="py-20 lg:py-32">
       <div className="container">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">

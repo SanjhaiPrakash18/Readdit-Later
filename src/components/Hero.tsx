@@ -30,21 +30,31 @@ const Hero = () => {
             sync them across devices, and browse in a clean, distraction-free view.
           </p>
 
+          {/* Demo Video */}
+          <div className="w-full max-w-4xl mx-auto mb-8">
+            <div className="aspect-video bg-muted rounded-lg border-2 border-dashed border-border flex items-center justify-center">
+              <div className="text-center">
+                <p className="text-muted-foreground mb-2">Demo Video Placeholder</p>
+                <p className="text-sm text-muted-foreground">1920x1080 resolution</p>
+              </div>
+            </div>
+          </div>
+
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Button 
               variant="hero" 
-              size="lg" 
-              className="text-lg px-8 py-6 h-auto"
+              size="default" 
+              className="px-6 py-3"
               onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
             >
-              <ExternalLink className="h-5 w-5 mr-2" />
+              <ExternalLink className="h-4 w-4 mr-2" />
               Add to Chrome - Free
             </Button>
             <Button 
               variant="outline" 
-              size="lg"
-              className="text-lg px-8 py-6 h-auto"
+              size="default"
+              className="px-6 py-3"
               onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
             >
               See Features
