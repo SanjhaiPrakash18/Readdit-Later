@@ -104,7 +104,7 @@ const Hero = () => {
                 src="/Chrome SVG.svg"
                 alt="Chrome"
                 className="h-4 w-4 mr-2"
-                style={{ display: "inline-block", verticalAlign: "middle" }}
+                style={{ display: "inline-block", verticalAlign: "middle", background color:"#ffffff"}}
               />
               Add to Chrome - Free
             </Button>
