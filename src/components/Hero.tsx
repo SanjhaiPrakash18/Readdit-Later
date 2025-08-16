@@ -32,10 +32,13 @@ const Hero = () => {
 
           {/* Demo Video */}
           <div className="w-full max-w-4xl mx-auto mb-8">
-            <div className="aspect-video bg-muted rounded-lg border-2 border-dashed border-border flex items-center justify-center overflow-hidden">
+            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center overflow-hidden">
               <video
                 src="/Land Page Read Lat 1.mp4"
                 controls
+                loop
+                autoPlay
+                muted
                 className="w-full h-full object-cover rounded-lg"
                 // poster="/video-poster.jpg" // Optional: add a poster image in public folder
               >
