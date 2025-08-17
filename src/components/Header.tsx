@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { ExternalLink, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 
 const Header = () => {
   const navItems = [
@@ -43,7 +43,16 @@ const Header = () => {
             style={{ backgroundColor: '#000000' }}
             onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
           >
-            <ExternalLink className="h-4 w-4" />
+            <img
+              src="/Chrome SVG.svg"
+              alt="Chrome"
+              className="h-4 w-4 mr-2"
+              style={{ 
+                display: "inline-block", 
+                verticalAlign: "middle",
+                filter: "brightness(0) invert(1)" // This makes any color white
+              }}
+            />
             Add to Chrome
           </Button>
         </nav>
@@ -74,7 +83,16 @@ const Header = () => {
                   style={{ backgroundColor: '#000000' }}
                   onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
                 >
-                  <ExternalLink className="h-4 w-4" />
+                  <img
+                    src="/Chrome SVG.svg"
+                    alt="Chrome"
+                    className="h-4 w-4 mr-2"
+                    style={{ 
+                      display: "inline-block", 
+                      verticalAlign: "middle",
+                      filter: "brightness(0) invert(1)" // This makes any color white
+                    }}
+                  />
                   Add to Chrome
                 </Button>
               </div>
