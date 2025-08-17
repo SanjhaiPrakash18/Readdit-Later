@@ -51,7 +51,7 @@ const CTA = () => {
               {/* Responsive Button below */}
               <div className="flex justify-center mb-8">
                 <Button
-                  className="w-full max-w-xs px-4 py-3 bg-black hover:bg-gray-800 text-white text-[0.875rem]"
+                  className="w-full max-w-sm sm:max-w-xs px-4 py-3 bg-black hover:bg-gray-800 text-white text-[0.875rem]"
                   onClick={() =>
                     window.open(
                       "https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk",
