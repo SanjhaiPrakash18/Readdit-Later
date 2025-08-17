@@ -38,6 +38,10 @@ const Footer = () => {
             <span className="text-xs">© 2025 Readdit Later</span>
           </div>
         </div>
+        {/* Made with love for reddit users */}
+        <div className="mt-4 text-center text-xs text-muted-foreground">
+          Made with <span role="img" aria-label="love">❤️</span> for reddit users
+        </div>
       </div>
     </footer>
   );
