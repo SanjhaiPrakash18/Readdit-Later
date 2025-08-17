@@ -47,7 +47,7 @@ const Hero = () => {
           {/* Badge */}
           <Badge variant="secondary" className="px-4 py-2 text-sm font-medium">
             <Star className="h-4 w-4 mr-2 fill-primary text-primary" />
-            5.0 Rating • 10 Users
+            5.0 Rating • 10+ Users
           </Badge>
 
           {/* Main headline */}
