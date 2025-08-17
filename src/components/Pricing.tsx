@@ -58,23 +58,26 @@ const Pricing = () => {
                 ))}
               </div>
               
-              <Button 
-  size="lg" 
-  className="bg-black hover:bg-gray-800 text-white w-fit"
-  onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
->
-  <img
-    src="/Chrome SVG.svg"
-    alt="Chrome"
-    className="h-4 w-4 mr-2"
-    style={{ 
-      display: "inline-block", 
-      verticalAlign: "middle",
-      filter: "brightness(0) invert(1)"
-    }}
-  />
-  Add to Chrome - Free
-</Button>
+              {/* Center the button */}
+              <div className="flex justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-black hover:bg-gray-800 text-white w-fit"
+                  onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
+                >
+                  <img
+                    src="/Chrome SVG.svg"
+                    alt="Chrome"
+                    className="h-4 w-4 mr-2"
+                    style={{ 
+                      display: "inline-block", 
+                      verticalAlign: "middle",
+                      filter: "brightness(0) invert(1)"
+                    }}
+                  />
+                  Add to Chrome - Free
+                </Button>
+              </div>
               
               <p className="text-xs text-muted-foreground text-center">
                 No credit card required • Install in seconds
