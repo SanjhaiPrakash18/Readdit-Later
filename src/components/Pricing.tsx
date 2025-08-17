@@ -38,7 +38,7 @@ const Pricing = () => {
             </div>
             
             <CardHeader className="text-center pb-8">
-              <CardTitle className="text-2xl mb-2">Free Forever</CardTitle>
+              <CardTitle className="text-2xl mb-2">Free For Now</CardTitle>
               <CardDescription className="text-muted-foreground">
                 Everything you need to organize your Reddit content
               </CardDescription>
