@@ -93,25 +93,25 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-           <Button 
-  variant="hero" 
-  size="default" 
-  className="px-6 py-3 text-white"
-  style={{ backgroundColor: '#000000' }}
-  onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
->
-  <img
-    src="/Chrome SVG.svg"
-    alt="Chrome"
-    className="h-4 w-4 mr-2"
-    style={{ 
-      display: "inline-block", 
-      verticalAlign: "middle",
-      filter: "brightness(0) invert(1)" // This makes any color white
-    }}
-  />
-  Add to Chrome - Free
-</Button>
+            <Button 
+              variant="hero" 
+              size="default" 
+              className="px-6 py-3 text-white"
+              style={{ backgroundColor: '#000000' }}
+              onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
+            >
+              <img
+                src="/Chrome SVG.svg"
+                alt="Chrome"
+                className="h-4 w-4 mr-2"
+                style={{ 
+                  display: "inline-block", 
+                  verticalAlign: "middle",
+                  filter: "brightness(0) invert(1)" // This makes any color white
+                }}
+              />
+              Add to Chrome - Free
+            </Button>
             <Button 
               variant="outline" 
               size="default"
@@ -120,6 +120,23 @@ const Hero = () => {
             >
               See Features
             </Button>
+          </div>
+
+          {/* Product Hunt Badge */}
+          <div className="flex justify-center pt-4">
+            <a
+              href="https://www.producthunt.com/products/readdit-later?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-readdit&#0045;later"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1004780&theme=dark&t=1755402660796"
+                alt="Readdit Later - Save and manage your Reddit posts with ease | Product Hunt"
+                style={{ width: 250, height: 54 }}
+                width={250}
+                height={54}
+              />
+            </a>
           </div>
 
           {/* Features preview */}
