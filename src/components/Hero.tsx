@@ -106,8 +106,7 @@ const Hero = () => {
     className="h-4 w-4 mr-2"
     style={{ 
       display: "inline-block", 
-      verticalAlign: "middle", 
-      backgroundColor: "#ffffff"
+      verticalAlign: "middle"
     }}
   />
   Add to Chrome - Free
