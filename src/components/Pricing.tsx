@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, ExternalLink } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 const features = [
   "Auto Sync Across Devices",
@@ -63,7 +63,16 @@ const Pricing = () => {
                 className="w-full bg-black hover:bg-gray-800 text-white"
                 onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
               >
-                <ExternalLink className="h-4 w-4 mr-2" />
+                <img
+                  src="/Chrome SVG.svg"
+                  alt="Chrome"
+                  className="h-4 w-4 mr-2"
+                  style={{ 
+                    display: "inline-block", 
+                    verticalAlign: "middle",
+                    filter: "brightness(0) invert(1)" // This makes any color white
+                  }}
+                />
                 Add to Chrome - Free
               </Button>
               
