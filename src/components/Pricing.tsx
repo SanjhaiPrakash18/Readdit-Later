@@ -44,7 +44,7 @@ const Pricing = () => {
               </CardDescription>
               <div className="mt-6">
                 <span className="text-5xl font-bold">$0</span>
-                <span className="text-muted-foreground ml-2">forever</span>
+                <span className="text-muted-foreground ml-2">for now</span>
               </div>
             </CardHeader>
             
