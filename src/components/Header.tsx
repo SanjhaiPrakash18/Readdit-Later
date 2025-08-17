@@ -44,7 +44,8 @@ const Header = () => {
         </div>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex flex-1 items-center ml-8">
+        <nav className="hidden md:flex flex-1 items-center justify-center ml-8">
+          {/* Centered nav options */}
           <div className="flex items-center space-x-6">
             {navItems.map((item) => (
               <button
@@ -56,6 +57,7 @@ const Header = () => {
               </button>
             ))}
           </div>
+          {/* Social & CTA moved to right edge */}
           <div className="flex items-center space-x-4 ml-auto">
             {socialLinks.map((social) => (
               <a
@@ -69,8 +71,19 @@ const Header = () => {
                 <img
                   src={social.icon}
                   alt={social.name}
-                  className="h-4 w-4"
-                  style={{ display: "inline-block", verticalAlign: "middle" }}
+                  className={
+                    // Apply h-1.5 w-1.5 (6px) for LinkedIn and Reddit, else default to h-4 w-4
+                    social.name === "LinkedIn" || social.name === "Reddit"
+                      ? "h-1.5 w-1.5"
+                      : "h-4 w-4"
+                  }
+                  style={{
+                    display: "inline-block",
+                    verticalAlign: "middle",
+                    ...(social.name === "LinkedIn" || social.name === "Reddit"
+                      ? { height: "6px", width: "6px" }
+                      : {}),
+                  }}
                 />
               </a>
             ))}
@@ -128,8 +141,18 @@ const Header = () => {
                       <img
                         src={social.icon}
                         alt={social.name}
-                        className="h-4 w-4"
-                        style={{ display: "inline-block", verticalAlign: "middle" }}
+                        className={
+                          social.name === "LinkedIn" || social.name === "Reddit"
+                            ? "h-1.5 w-1.5"
+                            : "h-4 w-4"
+                        }
+                        style={{
+                          display: "inline-block",
+                          verticalAlign: "middle",
+                          ...(social.name === "LinkedIn" || social.name === "Reddit"
+                            ? { height: "6px", width: "6px" }
+                            : {}),
+                        }}
                       />
                     </a>
                   ))}
