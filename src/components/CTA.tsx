@@ -49,7 +49,7 @@ const CTA = () => {
                   onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
                 >
                   <Download className="h-4 w-4 mr-2" />
-                  Install Free Extension
+                  Become an organized Reddit user
                 </Button>
               </div>
               <div className="flex justify-center items-center gap-2 text-sm text-muted-foreground">
