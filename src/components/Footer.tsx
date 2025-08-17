@@ -38,6 +38,33 @@ const Footer = () => {
             <span className="text-xs">© 2025 Readdit Later</span>
           </div>
         </div>
+        {/* New Footer Links Section */}
+        <div className="mt-4 flex flex-col md:flex-row justify-center items-center gap-4 text-xs text-muted-foreground">
+          <a
+            href="https://sanjhaiprakash18.github.io/Readdit-Later/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors"
+          >
+            Privacy Policy
+          </a>
+          <span className="hidden md:inline-block">|</span>
+          <a
+            href="https://sanjhaiprakash18.github.io/Readdit-Later-Terms-of-Service/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors"
+          >
+            Terms of Service
+          </a>
+          <span className="hidden md:inline-block">|</span>
+          <a
+            href="mailto:sanjhaiprakash18@gmail.com"
+            className="hover:text-primary transition-colors"
+          >
+            Contact
+          </a>
+        </div>
         {/* Made with love for reddit users */}
         <div className="mt-4 text-center text-xs text-muted-foreground">
           Made with <span role="img" aria-label="love">❤️</span> for reddit users
