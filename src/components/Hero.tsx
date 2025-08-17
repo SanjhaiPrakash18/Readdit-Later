@@ -106,7 +106,8 @@ const Hero = () => {
     className="h-4 w-4 mr-2"
     style={{ 
       display: "inline-block", 
-      verticalAlign: "middle"
+      verticalAlign: "middle",
+      filter: "brightness(0) invert(1)" // This makes any color white
     }}
   />
   Add to Chrome - Free
