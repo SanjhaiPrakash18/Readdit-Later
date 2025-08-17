@@ -54,7 +54,7 @@ const Hero = () => {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
             Save & Organize Your{" "}
             <span className="gradient-primary bg-clip-text text-transparent">
-              Reddit Posts
+              Reddit Posts With Ease
             </span>
           </h1>
 
