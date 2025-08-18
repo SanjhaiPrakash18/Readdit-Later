@@ -33,9 +33,10 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container h-16 grid grid-cols-3 items-center">
-        {/* Logo Left */}
-        <div className="flex items-center space-x-3 col-span-2 md:col-span-1">
+      {/* Responsive: 2 columns on mobile, 3 columns on md+ */}
+      <div className="container h-16 grid grid-cols-2 md:grid-cols-3 items-center">
+        {/* Logo Left (always left column) */}
+        <div className="flex items-center space-x-3">
           <img 
             src="/lovable-uploads/71d413d8-e032-432c-b651-41c88e16fcc0.png" 
             alt="Readdit Later Logo" 
@@ -44,7 +45,7 @@ const Header = () => {
           <h1 className="text-xl font-bold">Readdit Later</h1>
         </div>
 
-        {/* Centered Nav */}
+        {/* Centered Nav (hidden on mobile) */}
         <nav className="hidden md:flex justify-center">
           <div className="flex items-center space-x-8">
             {navItems.map((item) => (
@@ -59,7 +60,7 @@ const Header = () => {
           </div>
         </nav>
 
-        {/* Socials & CTA Right */}
+        {/* Socials & CTA Right (hidden on mobile) */}
         <div className="hidden md:flex items-center justify-end space-x-4">
           {socialLinks.map((social) => (
             <a
@@ -109,8 +110,8 @@ const Header = () => {
           </Button>
         </div>
 
-        {/* Mobile Navigation (Hamburger right aligned) */}
-        <div className="md:hidden flex justify-end col-span-1">
+        {/* Mobile Navigation (Hamburger right aligned; always column 2 on mobile) */}
+        <div className="flex justify-end md:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="ml-auto">
