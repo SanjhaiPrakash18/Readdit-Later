@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Download, Star } from "lucide-react";
-
+import { Star } from "lucide-react";
 const CTA = () => {
   return (
     <section className="py-20 lg:py-32 bg-muted/30 relative overflow-hidden">
@@ -16,7 +15,6 @@ const CTA = () => {
           }}
         ></div>
       </div>
-
       <div className="relative z-10">
         <div className="container">
           <Card
@@ -59,7 +57,14 @@ const CTA = () => {
                     )
                   }
                 >
-                  <Download className="h-4 w-4 mr-2" />
+                  <img
+                    src="/Bookmark SVG.svg"
+                    alt="Bookmark"
+                    className="h-4 w-4 mr-2"
+                    style={{ 
+                      filter: "brightness(0) invert(1)" // This makes the SVG white
+                    }}
+                  />
                   <span className="truncate">
                     Become an organized Reddit user
                   </span>
@@ -83,5 +88,4 @@ const CTA = () => {
     </section>
   );
 };
-
 export default CTA;
