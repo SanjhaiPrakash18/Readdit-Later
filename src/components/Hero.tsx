@@ -51,10 +51,18 @@ const Hero = () => {
           </Badge>
 
           {/* Main headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight flex items-center justify-center gap-2">
             Save & Organize Your{" "}
-            <span className="gradient-primary bg-clip-text text-transparent">
+            <span className="gradient-primary bg-clip-text text-transparent flex items-center gap-2">
               Reddit Posts With Ease
+              <img
+                src="/Bookmark SVG.svg"
+                alt="Bookmark"
+                className="h-10 w-10 md:h-14 md:w-14 lg:h-16 lg:w-16 inline-block ml-2"
+                style={{
+                  verticalAlign: "middle"
+                }}
+              />
             </span>
           </h1>
 
