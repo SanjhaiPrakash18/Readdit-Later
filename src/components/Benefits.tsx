@@ -53,39 +53,6 @@ const comparisonFeatures = [
   }
 ];
 
-const additionalBenefits = [
-  {
-    title: "Built for Power Users",
-    description: "Advanced features that Reddit power users have been waiting for",
-    items: [
-      "Keyboard shortcuts for quick navigation",
-      "Advanced sorting options (by score, date, subreddit)",
-      "Export your saved posts data",
-      "Cross-device synchronization"
-    ]
-  },
-  {
-    title: "Enhanced Productivity",
-    description: "Transform how you consume and manage Reddit content",
-    items: [
-      "Quick preview without leaving the extension",
-      "Smart notifications for trending saved posts",
-      "Automatic categorization suggestions",
-      "Reading progress tracking"
-    ]
-  },
-  {
-    title: "Privacy & Security",
-    description: "Your data, your control, with enterprise-grade security",
-    items: [
-      "Local data storage with optional cloud sync",
-      "No tracking or analytics on your reading habits",
-      "Open-source codebase for transparency",
-      "Minimal permissions required"
-    ]
-  }
-];
-
 const Benefits = () => {
   return (
     <section id="benefits" className="py-20 lg:py-32 bg-gradient-to-br from-background via-background/95 to-primary/5">
