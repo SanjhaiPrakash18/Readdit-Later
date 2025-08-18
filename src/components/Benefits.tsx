@@ -57,13 +57,13 @@ const Benefits = () => {
         </div>
 
         {/* Comparison Layout */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border border-primary/10">
+        <div className="bg-card/80 backdrop-blur-sm rounded-2xl shadow-card overflow-hidden border border-border">
           <div className="grid grid-cols-1 lg:grid-cols-3 min-h-[600px]">
             
             {/* Reddit Native Column */}
-            <div className="bg-gradient-to-br from-red-50 to-red-100 p-8 lg:p-12 flex flex-col">
+            <div className="bg-gradient-to-br from-destructive/10 to-destructive/20 p-8 lg:p-12 flex flex-col">
               <div className="text-center mb-12">
-                <h3 className="text-2xl md:text-3xl font-bold text-red-800 mb-2">
+                <h3 className="text-2xl md:text-3xl font-bold text-destructive mb-2">
                   Reddit Native
                 </h3>
               </div>
@@ -71,17 +71,17 @@ const Benefits = () => {
               <div className="space-y-8 flex-1">
                 {comparisonFeatures.map((feature, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                      <X className="w-5 h-5 text-red-500" />
+                    <div className="flex-shrink-0 w-8 h-8 bg-destructive/20 rounded-full flex items-center justify-center">
+                      <X className="w-5 h-5 text-destructive" />
                     </div>
                     <div>
                       <div className="flex items-center gap-3 mb-2">
-                        <feature.icon className="h-5 w-5 text-red-600" />
-                        <h4 className="font-medium text-red-800">
+                        <feature.icon className="h-5 w-5 text-destructive" />
+                        <h4 className="font-medium text-destructive">
                           {feature.feature}
                         </h4>
                       </div>
-                      <p className="text-red-700 text-sm leading-relaxed">
+                      <p className="text-destructive/80 text-sm leading-relaxed">
                         {feature.reddit}
                       </p>
                     </div>
@@ -91,8 +91,8 @@ const Benefits = () => {
             </div>
 
             {/* VS Divider */}
-            <div className="bg-gradient-to-b from-gray-50 to-gray-100 flex items-center justify-center py-8 lg:py-0">
-              <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg border-4 border-primary/20">
+            <div className="bg-gradient-to-b from-muted to-muted/50 flex items-center justify-center py-8 lg:py-0">
+              <div className="bg-card rounded-full w-16 h-16 flex items-center justify-center shadow-primary border-4 border-primary/20">
                 <span className="text-primary font-bold text-lg">VS</span>
               </div>
             </div>
@@ -118,7 +118,7 @@ const Benefits = () => {
                           {feature.feature}
                         </h4>
                       </div>
-                      <p className="text-primary text-sm font-medium leading-relaxed">
+                      <p className="text-primary/80 text-sm font-medium leading-relaxed">
                         {feature.readditLater}
                       </p>
                     </div>
