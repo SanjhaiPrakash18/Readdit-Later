@@ -52,7 +52,7 @@ const Benefits = () => {
             <div className="p-8 lg:p-16 flex flex-col">
               <div className="mb-16">
                 <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
-                  Other Solutions
+                  Reddit Native
                 </h3>
               </div>
               
