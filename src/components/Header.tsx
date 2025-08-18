@@ -31,12 +31,29 @@ const Header = () => {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleLogoClick = () => {
+    // Navigate to hero section - looks for section with py-20 lg:py-32 classes (your hero section)
+    const heroSection = document.querySelector('section.py-20.lg\\:py-32') || 
+                       document.querySelector('#hero') || 
+                       document.querySelector('.hero') || 
+                       document.querySelector('main');
+    if (heroSection) {
+      heroSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If no hero section is found, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       {/* Responsive: 2 columns on mobile, 3 columns on md+ */}
       <div className="container h-16 grid grid-cols-2 md:grid-cols-3 items-center">
-        {/* Logo Left (always left column) */}
-        <div className="flex items-center space-x-3">
+        {/* Logo Left (always left column) - Now clickable */}
+        <div 
+          className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
+          onClick={handleLogoClick}
+        >
           <img 
             src="/lovable-uploads/71d413d8-e032-432c-b651-41c88e16fcc0.png" 
             alt="Readdit Later Logo" 
