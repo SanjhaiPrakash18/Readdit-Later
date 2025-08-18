@@ -1,3 +1,4 @@
+import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, X, Search, Filter, BarChart3, Zap, Eye, Users } from "lucide-react";
 
@@ -128,13 +129,13 @@ const Benefits = () => {
                   </div>
                   <div className="p-6 bg-red-50/30">
                     <div className="flex items-start gap-3">
-                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <feature.redditIcon className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
                       <span className="text-red-700 text-sm">{feature.reddit}</span>
                     </div>
                   </div>
                   <div className="p-6 bg-primary/5">
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <feature.readditIcon className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-primary text-sm font-medium">{feature.readditLater}</span>
                     </div>
                   </div>
@@ -170,6 +171,7 @@ const Benefits = () => {
             </Card>
           ))}
         </div>
+      </div>
     </section>
   );
 };
