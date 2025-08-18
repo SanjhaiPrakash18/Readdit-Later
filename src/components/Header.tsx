@@ -35,7 +35,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container h-16 grid grid-cols-3 items-center">
         {/* Logo Left */}
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-3 col-span-2 md:col-span-1">
           <img 
             src="/lovable-uploads/71d413d8-e032-432c-b651-41c88e16fcc0.png" 
             alt="Readdit Later Logo" 
@@ -109,11 +109,11 @@ const Header = () => {
           </Button>
         </div>
 
-        {/* Mobile Navigation */}
-        <div className="md:hidden flex justify-end">
+        {/* Mobile Navigation (Hamburger right aligned) */}
+        <div className="md:hidden flex justify-end col-span-1">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="ml-auto">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
