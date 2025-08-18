@@ -55,7 +55,7 @@ const Hero = () => {
             <img
               src="/Bookmark SVG.svg"
               alt="Bookmark"
-              className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 inline-block transform rotate-12"
+              className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 inline-block transform rotate-45"
             />
             Save & Organize Your{" "}
             <span className="gradient-primary bg-clip-text text-transparent">
