@@ -53,39 +53,6 @@ const comparisonFeatures = [
   }
 ];
 
-const additionalBenefits = [
-  {
-    title: "Built for Power Users",
-    description: "Advanced features that Reddit power users have been waiting for",
-    items: [
-      "Keyboard shortcuts for quick navigation",
-      "Advanced sorting options (by score, date, subreddit)",
-      "Export your saved posts data",
-      "Cross-device synchronization"
-    ]
-  },
-  {
-    title: "Enhanced Productivity",
-    description: "Transform how you consume and manage Reddit content",
-    items: [
-      "Quick preview without leaving the extension",
-      "Smart notifications for trending saved posts",
-      "Automatic categorization suggestions",
-      "Reading progress tracking"
-    ]
-  },
-  {
-    title: "Privacy & Security",
-    description: "Your data, your control, with enterprise-grade security",
-    items: [
-      "Local data storage with optional cloud sync",
-      "No tracking or analytics on your reading habits",
-      "Open-source codebase for transparency",
-      "Minimal permissions required"
-    ]
-  }
-];
-
 const Benefits = () => {
   return (
     <section id="benefits" className="py-20 lg:py-32 bg-gradient-to-br from-background via-background/95 to-primary/5">
@@ -143,33 +110,6 @@ const Benefits = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Additional Benefits Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {additionalBenefits.map((benefit, index) => (
-            <Card key={index} className="shadow-card bg-white/80 backdrop-blur-sm border-primary/10 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-              <CardHeader className="text-center pb-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                    <CheckCircle2 className="h-5 w-5 text-white" />
-                  </div>
-                </div>
-                <CardTitle className="text-xl font-bold">{benefit.title}</CardTitle>
-                <CardDescription className="text-base">{benefit.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {benefit.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
         </div>
       </div>
     </section>
