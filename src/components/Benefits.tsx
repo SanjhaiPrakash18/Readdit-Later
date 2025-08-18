@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, X, Search, Filter, BarChart3, Zap, Eye, Users } from "lucide-react";
 
@@ -53,6 +52,39 @@ const comparisonFeatures = [
   }
 ];
 
+const additionalBenefits = [
+  {
+    title: "Built for Power Users",
+    description: "Advanced features that Reddit power users have been waiting for",
+    items: [
+      "Keyboard shortcuts for quick navigation",
+      "Advanced sorting options (by score, date, subreddit)",
+      "Export your saved posts data",
+      "Cross-device synchronization"
+    ]
+  },
+  {
+    title: "Enhanced Productivity",
+    description: "Transform how you consume and manage Reddit content",
+    items: [
+      "Quick preview without leaving the extension",
+      "Smart notifications for trending saved posts",
+      "Automatic categorization suggestions",
+      "Reading progress tracking"
+    ]
+  },
+  {
+    title: "Privacy & Security",
+    description: "Your data, your control, with enterprise-grade security",
+    items: [
+      "Local data storage with optional cloud sync",
+      "No tracking or analytics on your reading habits",
+      "Open-source codebase for transparency",
+      "Minimal permissions required"
+    ]
+  }
+];
+
 const Benefits = () => {
   return (
     <section id="benefits" className="py-20 lg:py-32 bg-gradient-to-br from-background via-background/95 to-primary/5">
@@ -96,13 +128,13 @@ const Benefits = () => {
                   </div>
                   <div className="p-6 bg-red-50/30">
                     <div className="flex items-start gap-3">
-                      <feature.redditIcon className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <X className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
                       <span className="text-red-700 text-sm">{feature.reddit}</span>
                     </div>
                   </div>
                   <div className="p-6 bg-primary/5">
                     <div className="flex items-start gap-3">
-                      <feature.readditIcon className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-primary text-sm font-medium">{feature.readditLater}</span>
                     </div>
                   </div>
@@ -137,6 +169,27 @@ const Benefits = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-8 rounded-2xl border border-primary/20">
+            <h3 className="text-2xl font-bold mb-4">
+              Ready to Transform Your Reddit Experience?
+            </h3>
+            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              Join thousands of Reddit users who have already upgraded their saved posts 
+              management with Readdit Later's powerful features.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-4 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-colors shadow-lg">
+                Install Free Extension
+              </button>
+              <button className="px-8 py-4 border border-primary text-primary rounded-xl font-semibold hover:bg-primary/5 transition-colors">
+                View Live Demo
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
