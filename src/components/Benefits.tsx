@@ -84,7 +84,6 @@ const Benefits = () => {
                   <span className="gradient-primary bg-clip-text text-transparent">
                     Readdit Later
                   </span>
-                  <span className="text-primary text-2xl ml-2">•</span>
                 </h3>
               </div>
               
