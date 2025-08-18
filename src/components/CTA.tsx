@@ -58,7 +58,7 @@ const CTA = () => {
                   }
                 >
                   <img
-                    src="/Bookmark SVG.svg"
+                    src="/Bookmark SVG 2.svg"
                     alt="Bookmark"
                     className="h-4 w-4 mr-2"
                     style={{ 
