@@ -70,10 +70,15 @@ const Benefits = () => {
               </div>
             </div>
 
-            {/* VS Divider */}
+            {/* VS Divider with Circle Behind */}
             <div className="bg-muted/30 flex items-center justify-center py-8 lg:py-0 px-8">
-              <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center border border-primary/20">
-                <span className="text-primary font-bold text-lg">VS</span>
+              <div className="relative flex items-center justify-center">
+                {/* Outer grey circle */}
+                <div className="absolute w-24 h-24 rounded-full bg-muted/60" />
+                {/* Inner containing circle */}
+                <div className="relative bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center border border-primary/20">
+                  <span className="text-primary font-bold text-lg">VS</span>
+                </div>
               </div>
             </div>
 
