@@ -65,8 +65,7 @@ const Benefits = () => {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            See how Readdit Later transforms your saved posts experience with features 
-            that Reddit should have built years ago.
+           See how Readdit Later transforms your saved posts experience with powerful features for better organization.
           </p>
         </div>
 
