@@ -12,17 +12,17 @@ const Header = () => {
   const socialLinks = [
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/",
+      href: "https://www.linkedin.com/in/sanjhaiprakash/",
       icon: "/LinkedIn Icon.svg",
     },
     {
       name: "X",
-      href: "https://x.com/",
+      href: "https://x.com/Sanjhai_18",
       icon: "/X Icon.svg",
     },
     {
       name: "Reddit",
-      href: "https://reddit.com/",
+      href: "https://www.reddit.com/user/SanjhaiPrakash18",
       icon: "/Reddit Icon.svg",
     },
   ];
