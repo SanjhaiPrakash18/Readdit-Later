@@ -38,7 +38,7 @@ const comparisonFeatures = [
   {
     feature: "Visual Experience",
     reddit: "Basic list view with minimal information",
-    readditLater: "Rich cards with thumbnails, metadata, and quick actions",
+    readditLater: "Rich cards with metadata and quick actions",
     icon: Eye,
     redditIcon: X,
     readditIcon: CheckCircle2
