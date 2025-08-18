@@ -57,11 +57,11 @@ const Benefits = () => {
         </div>
 
         {/* Comparison Layout */}
-        <div className="bg-card/80 backdrop-blur-sm rounded-2xl shadow-card overflow-hidden border border-border">
-          <div className="grid grid-cols-1 lg:grid-cols-3 min-h-[600px]">
+        <div className="bg-card/80 backdrop-blur-sm rounded-2xl shadow-card overflow-hidden border border-border max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] min-h-[600px]">
             
             {/* Reddit Native Column */}
-            <div className="bg-gradient-to-br from-destructive/10 to-destructive/20 p-8 lg:p-12 flex flex-col">
+            <div className="bg-card p-8 lg:p-12 flex flex-col border-r border-border/50">
               <div className="text-center mb-12">
                 <h3 className="text-2xl md:text-3xl font-bold text-destructive mb-2">
                   Reddit Native
@@ -91,14 +91,14 @@ const Benefits = () => {
             </div>
 
             {/* VS Divider */}
-            <div className="bg-gradient-to-b from-muted to-muted/50 flex items-center justify-center py-8 lg:py-0">
-              <div className="bg-card rounded-full w-16 h-16 flex items-center justify-center shadow-primary border-4 border-primary/20">
-                <span className="text-primary font-bold text-lg">VS</span>
+            <div className="bg-muted/30 flex items-center justify-center py-8 lg:py-0 px-6">
+              <div className="bg-card rounded-full w-12 h-12 flex items-center justify-center shadow-primary border-2 border-primary/20">
+                <span className="text-primary font-bold text-sm">VS</span>
               </div>
             </div>
 
             {/* Readdit Later Column */}
-            <div className="bg-gradient-to-br from-primary/10 to-primary/20 p-8 lg:p-12 flex flex-col">
+            <div className="bg-card p-8 lg:p-12 flex flex-col border-l border-border/50">
               <div className="text-center mb-12">
                 <h3 className="text-2xl md:text-3xl font-bold text-primary mb-2">
                   Readdit Later
