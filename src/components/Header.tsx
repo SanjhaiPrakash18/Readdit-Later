@@ -35,7 +35,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container h-16 grid grid-cols-3 items-center">
         {/* Logo Left */}
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-3 col-span-2 md:col-span-1">
           <img 
             src="/lovable-uploads/71d413d8-e032-432c-b651-41c88e16fcc0.png" 
             alt="Readdit Later Logo" 
@@ -75,7 +75,7 @@ const Header = () => {
                 alt={social.name}
                 className={
                   social.name === "LinkedIn" || social.name === "Reddit"
-                    ? "h-6 w-6"
+                    ? "h-6 w-6" // 24px for LinkedIn and Reddit
                     : "h-4 w-4"
                 }
                 style={{
@@ -102,15 +102,15 @@ const Header = () => {
               style={{ 
                 display: "inline-block", 
                 verticalAlign: "middle",
-                filter: "brightness(0) invert(1)"
+                filter: "brightness(0) invert(1)" // This makes any color white
               }}
             />
             Add to Chrome
           </Button>
         </div>
 
-        {/* Mobile Navigation (Hamburger right aligned with more right space) */}
-        <div className="md:hidden flex justify-end pr-2">
+        {/* Mobile Navigation (Hamburger right aligned) */}
+        <div className="md:hidden flex justify-end col-span-1">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="ml-auto">
@@ -171,7 +171,7 @@ const Header = () => {
                     style={{ 
                       display: "inline-block", 
                       verticalAlign: "middle",
-                      filter: "brightness(0) invert(1)"
+                      filter: "brightness(0) invert(1)" // This makes any color white
                     }}
                   />
                   Add to Chrome
