@@ -22,7 +22,7 @@ const Header = () => {
     },
     {
       name: "Reddit",
-      href: "https://www.reddit.com/user/SanjhaiPrakash18",
+      href: "https://www.reddit.com/user/Appropriate-Look-875/",
       icon: "/Reddit Icon.svg",
     },
   ];
