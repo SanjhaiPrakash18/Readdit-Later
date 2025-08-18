@@ -51,7 +51,12 @@ const Hero = () => {
           </Badge>
 
           {/* Main headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight flex flex-wrap items-center justify-center gap-x-4">
+            <img
+              src="/Bookmark SVG.svg"
+              alt="Bookmark"
+              className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 inline-block"
+            />
             Save & Organize Your{" "}
             <span className="gradient-primary bg-clip-text text-transparent">
               Reddit Posts With Ease
