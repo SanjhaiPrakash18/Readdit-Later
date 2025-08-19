@@ -28,18 +28,18 @@ const Hero = () => {
       }}
     >
       <div className="container relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-12 items-center">
-          {/* Left side - Confused Man SVG */}
-          <div className="flex justify-center lg:justify-end order-2 lg:order-1">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 items-center">
+          {/* Left side - Confused Man SVG (hidden on mobile) */}
+          <div className="hidden lg:flex justify-center">
             <img
               src="/Confused Man Readdit Later.svg"
               alt="Confused Man - Before using Readdit Later"
-              className="w-full max-w-sm lg:max-w-md xl:max-w-lg h-auto"
+              className="w-32 xl:w-40 h-auto"
             />
           </div>
 
-          {/* Center - Content */}
-          <div className="flex flex-col items-center text-center space-y-8 order-1 lg:order-2">
+          {/* Center - Content (spans 3 columns on desktop) */}
+          <div className="flex flex-col items-center text-center space-y-8 lg:col-span-3">
             {/* Badge */}
             <Badge variant="secondary" className="px-4 py-2 text-sm font-medium">
               <Star className="h-4 w-4 mr-2 fill-primary text-primary" />
@@ -47,7 +47,7 @@ const Hero = () => {
             </Badge>
 
             {/* Main headline */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight flex flex-wrap items-center justify-center gap-x-4">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight flex flex-wrap items-center justify-center gap-x-4">
               <img
                 src="/Bookmark SVG.svg"
                 alt="Bookmark"
@@ -60,7 +60,7 @@ const Hero = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
               Never lose track of great Reddit content again! Save posts directly from Reddit, 
               sync them across devices, and browse in a clean, distraction-free view.
             </p>
@@ -117,12 +117,12 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right side - Happy Man SVG */}
-          <div className="flex justify-center lg:justify-start order-3 lg:order-3">
+          {/* Right side - Happy Man SVG (hidden on mobile) */}
+          <div className="hidden lg:flex justify-center">
             <img
               src="/Happy Man Readdit Later.svg"
               alt="Happy Man - After using Readdit Later"
-              className="w-full max-w-sm lg:max-w-md xl:max-w-lg h-auto"
+              className="w-32 xl:w-40 h-auto"
             />
           </div>
         </div>
