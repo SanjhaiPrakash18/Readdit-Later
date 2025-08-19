@@ -34,7 +34,7 @@ const Hero = () => {
             <img
               src="/Confused Man Readdit Later.svg"
               alt="Confused Man - Before using Readdit Later"
-              className="w-40 xl:w-48 h-auto"
+              className="w-52 xl:w-60 h-auto"
             />
           </div>
 
@@ -122,7 +122,7 @@ const Hero = () => {
             <img
               src="/Happy Man Readdit Later.svg"
               alt="Happy Man - After using Readdit Later"
-              className="w-40 xl:w-48 h-auto"
+              className="w-52 xl:w-60 h-auto"
             />
           </div>
         </div>
