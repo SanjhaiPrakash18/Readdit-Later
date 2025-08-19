@@ -43,7 +43,7 @@ const Hero = () => {
             {/* Badge */}
             <Badge variant="secondary" className="px-4 py-2 text-sm font-medium">
               <Star className="h-4 w-4 mr-2 fill-primary text-primary" />
-              Join over 20 Reddit users who are organizing their saved posts with this.
+              Join over 30 Reddit users who are organizing their saved posts with this.
             </Badge>
 
             {/* Main headline */}
