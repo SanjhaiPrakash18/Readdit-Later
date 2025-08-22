@@ -8,6 +8,7 @@ const features = [
   "Powerful Search & Filters",
   "Bulk Actions",
   "Statistics Dashboard",
+  "Clean Labeling",
   "Clean Reading Experience",
   "Privacy Focused",
   "Regular Updates"
