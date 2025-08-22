@@ -53,9 +53,9 @@ const Hero = () => {
                 alt="Bookmark"
                 className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 inline-block transform rotate-0"
               />
-              Manage Your{" "}
+              Manage Your Saved{" "}
               <span className="gradient-primary bg-clip-text text-transparent">
-                Saved Reddit Posts With Ease
+                Reddit Posts With Ease
               </span>
             </h1>
 
