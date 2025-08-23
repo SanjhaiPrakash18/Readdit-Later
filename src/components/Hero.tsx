@@ -40,6 +40,23 @@ const Hero = () => {
 
           {/* Center - Content (spans 3 columns on desktop) */}
           <div className="flex flex-col items-center text-center space-y-8 lg:col-span-3">
+            {/* Product Hunt Badge */}
+            <div className="flex justify-center">
+              <a
+                href="https://www.producthunt.com/products/readdit-later?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-readdit&#0045;later"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1004780&theme=dark&t=1755402660796"
+                  alt="Readdit Later - Save and manage your Reddit posts with ease | Product Hunt"
+                  style={{ width: 250, height: 54 }}
+                  width={250}
+                  height={54}
+                />
+              </a>
+            </div>
+
             {/* Badge */}
             <Badge variant="secondary" className="px-4 py-2 text-sm font-medium">
               <Star className="h-4 w-4 mr-2 fill-primary text-primary" />
@@ -150,23 +167,6 @@ const Hero = () => {
               {playing ? <Pause className="w-6 h-6 text-white" /> : <Play className="w-6 h-6 text-white" />}
             </button>
           </div>
-        </div>
-
-        {/* Product Hunt Badge */}
-        <div className="flex justify-center pt-8">
-          <a
-            href="https://www.producthunt.com/products/readdit-later?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-readdit&#0045;later"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1004780&theme=dark&t=1755402660796"
-              alt="Readdit Later - Save and manage your Reddit posts with ease | Product Hunt"
-              style={{ width: 250, height: 54 }}
-              width={250}
-              height={54}
-            />
-          </a>
         </div>
       </div>
     </section>
