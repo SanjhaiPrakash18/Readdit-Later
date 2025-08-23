@@ -11,6 +11,11 @@ const Header = () => {
 
   const socialLinks = [
     {
+      name: "Discord",
+      href: "https://discord.gg/dbVnvKp3",
+      icon: "/Discord Logo.svg",
+    },
+    {
       name: "LinkedIn",
       href: "https://www.linkedin.com/in/sanjhaiprakash/",
       icon: "/LinkedIn Icon.svg",
@@ -92,14 +97,14 @@ const Header = () => {
                 src={social.icon}
                 alt={social.name}
                 className={
-                  social.name === "LinkedIn" || social.name === "Reddit"
-                    ? "h-6 w-6" // 24px for LinkedIn and Reddit
+                  social.name === "LinkedIn" || social.name === "Reddit" || social.name === "Discord"
+                    ? "h-6 w-6" // 24px for LinkedIn, Reddit, and Discord
                     : "h-4 w-4"
                 }
                 style={{
                   display: "inline-block",
                   verticalAlign: "middle",
-                  ...(social.name === "LinkedIn" || social.name === "Reddit"
+                  ...(social.name === "LinkedIn" || social.name === "Reddit" || social.name === "Discord"
                     ? { height: "24px", width: "24px" }
                     : {}),
                 }}
@@ -160,14 +165,14 @@ const Header = () => {
                         src={social.icon}
                         alt={social.name}
                         className={
-                          social.name === "LinkedIn" || social.name === "Reddit"
+                          social.name === "LinkedIn" || social.name === "Reddit" || social.name === "Discord"
                             ? "h-6 w-6"
                             : "h-4 w-4"
                         }
                         style={{
                           display: "inline-block",
                           verticalAlign: "middle",
-                          ...(social.name === "LinkedIn" || social.name === "Reddit"
+                          ...(social.name === "LinkedIn" || social.name === "Reddit" || social.name === "Discord"
                             ? { height: "24px", width: "24px" }
                             : {}),
                         }}
