@@ -114,8 +114,8 @@ const Header = () => {
           <Button 
             variant="hero" 
             size="default"
-            className="text-white hover:bg-gray-800"
-            style={{ backgroundColor: '#000000' }}
+            className="text-black border border-black hover:bg-gray-100"
+            style={{ backgroundColor: '#ffffff' }}
             onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
           >
             <img
@@ -124,8 +124,7 @@ const Header = () => {
               className="h-4 w-4 mr-2"
               style={{ 
                 display: "inline-block", 
-                verticalAlign: "middle",
-                filter: "brightness(0) invert(1)" // This makes any color white
+                verticalAlign: "middle"
               }}
             />
             Add to Chrome
