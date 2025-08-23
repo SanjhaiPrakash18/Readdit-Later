@@ -114,8 +114,7 @@ const Header = () => {
           <Button 
             variant="hero" 
             size="default"
-            className="text-black border border-black hover:bg-gray-100"
-            style={{ backgroundColor: '#ffffff' }}
+            className="text-black border border-black hover:bg-gray-100 bg-transparent shadow-none"
             onClick={() => window.open('https://chromewebstore.google.com/detail/jdceogapnjfcfdklbpnllbmnjbfmfejk', '_blank')}
           >
             <img
