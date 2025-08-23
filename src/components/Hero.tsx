@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <section 
-      className="relative py-20 lg:py-32 overflow-hidden" 
+      className="relative py-12 lg:py-20 overflow-hidden" 
       style={{ 
         backgroundColor: '#ffffff',
         backgroundImage: `radial-gradient(circle, #e5e7eb 1px, transparent 1px)`,
@@ -39,9 +39,9 @@ const Hero = () => {
           </div>
 
           {/* Center - Content (spans 3 columns on desktop) */}
-          <div className="flex flex-col items-center text-center space-y-8 lg:col-span-3">
+          <div className="flex flex-col items-center text-center space-y-6 lg:col-span-3">
             {/* Product Hunt Badge */}
-            <div className="flex justify-center">
+            <div className="flex justify-center -mt-4">
               <a
                 href="https://www.producthunt.com/products/readdit-later?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-readdit&#0045;later"
                 target="_blank"
