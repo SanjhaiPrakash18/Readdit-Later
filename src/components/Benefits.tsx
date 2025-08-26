@@ -19,6 +19,14 @@ const comparisonFeatures = [
     readditLater: "Select and unsave multiple posts at once",
   },
   {
+    reddit: "No grouping or organization options",
+    readditLater: "Automatic grouping by subreddits and custom labels",
+  },
+  {
+    reddit: "No way to add personal tags or categories",
+    readditLater: "Create and assign custom labels for personalized organization",
+  },
+  {
     reddit: "Basic list view with minimal information",
     readditLater: "Rich cards with metadata and quick actions",
   },
