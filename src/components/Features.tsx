@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { RefreshCw, Search, BarChart3, MousePointer, Archive, Clock } from "lucide-react";
+import { RefreshCw, Search, BarChart3, MousePointer, FolderOpen, Tag } from "lucide-react";
 
 const features = [
   {
@@ -27,16 +27,16 @@ const features = [
     benefit: "Manage hundreds of posts instantly"
   },
   {
-    icon: Archive,
-    title: "Archive & Organize",
-    description: "Keep your saved posts organized and easily accessible without cluttering your main Reddit feed.",
-    benefit: "Stay organized effortlessly"
+    icon: FolderOpen,
+    title: "Group by Subreddits & Labels",
+    description: "Automatically organize your saved posts by subreddit or custom labels for easy browsing and discovery.",
+    benefit: "Find content by category instantly"
   },
   {
-    icon: Clock,
-    title: "Read Later Queue",
-    description: "Save posts you want to read later and access them in a clean, distraction-free environment.",
-    benefit: "Perfect for focused reading"
+    icon: Tag,
+    title: "Custom Labels",
+    description: "Create and assign custom labels to your saved posts for personalized organization that fits your workflow.",
+    benefit: "Organize your way"
   }
 ];
 
@@ -55,7 +55,6 @@ const Features = () => {
             Powerful features designed to make your Reddit experience more organized and productive.
           </p>
         </div>
-
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <Card key={index} className="shadow-card hover:shadow-primary transition-all duration-300 transform hover:-translate-y-1">
