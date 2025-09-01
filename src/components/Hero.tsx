@@ -298,7 +298,7 @@ const Hero = () => {
                     color: '#374151',
                     fontWeight: '400',
                     textAlign: 'center',
-                    transform: 'scaleX(-1) rotate(2deg)',
+                    transform: 'rotate(2deg)',
                     marginTop: '-20px'
                   }}
                 >
