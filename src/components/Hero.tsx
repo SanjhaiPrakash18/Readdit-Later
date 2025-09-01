@@ -21,8 +21,10 @@ const Hero = () => {
   return (
     <>
       {/* Load Google Fonts */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link
-        href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Margarine&display=swap"
         rel="stylesheet"
       />
       
@@ -109,9 +111,9 @@ const Hero = () => {
                 <div 
                   className="absolute inset-0 flex items-center justify-center px-6"
                   style={{
-                    fontFamily: 'Kalam, cursive',
-                    fontSize: '16px',
-                    lineHeight: '1.3',
+                    fontFamily: 'Margarine, cursive',
+                    fontSize: '15px',
+                    lineHeight: '1.4',
                     color: '#374151',
                     fontWeight: '400',
                     textAlign: 'center',
