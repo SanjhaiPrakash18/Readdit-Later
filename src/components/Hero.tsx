@@ -31,42 +31,78 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 items-center">
           {/* Left side - Confused Man SVG (hidden on mobile) */}
           <div className="hidden lg:flex flex-col justify-center items-center">
-            {/* Handwritten text above the image */}
+            {/* Thought bubble with handwritten text */}
             <div className="mb-6 relative">
-              <p 
-                className="text-lg text-gray-600 transform -rotate-2 relative z-10"
-                style={{
-                  fontFamily: 'Comic Sans MS, Kalam, cursive',
-                  fontWeight: '400',
-                  letterSpacing: '0.5px',
-                  lineHeight: '1.3'
-                }}
-              >
-                "How will I find this<br />
-                solopreneur post<br />
-                among 500+ posts?"
-              </p>
-              {/* Hand-drawn style underline */}
               <svg 
-                className="absolute -bottom-2 left-0 w-full h-3 z-0" 
-                viewBox="0 0 200 12" 
-                fill="none" 
+                width="280" 
+                height="140" 
+                viewBox="0 0 280 140" 
+                className="drop-shadow-lg"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path 
-                  d="M2 8c20-3 40-5 60-2s40 8 60 5 40-8 60-5" 
-                  stroke="#6b7280" 
-                  strokeWidth="2" 
-                  strokeLinecap="round"
-                  opacity="0.6"
+                {/* Thought bubble main body */}
+                <ellipse 
+                  cx="140" 
+                  cy="60" 
+                  rx="120" 
+                  ry="45" 
+                  fill="white" 
+                  stroke="#d1d5db" 
+                  strokeWidth="2"
                   style={{
-                    filter: 'url(#rough)'
+                    filter: 'url(#thoughtBubbleRough)'
                   }}
                 />
+                
+                {/* Small thought bubbles */}
+                <circle 
+                  cx="100" 
+                  cy="115" 
+                  r="8" 
+                  fill="white" 
+                  stroke="#d1d5db" 
+                  strokeWidth="2"
+                />
+                <circle 
+                  cx="80" 
+                  cy="125" 
+                  r="5" 
+                  fill="white" 
+                  stroke="#d1d5db" 
+                  strokeWidth="2"
+                />
+                <circle 
+                  cx="65" 
+                  cy="132" 
+                  r="3" 
+                  fill="white" 
+                  stroke="#d1d5db" 
+                  strokeWidth="2"
+                />
+                
+                {/* Handwritten text inside bubble */}
+                <foreignObject x="40" y="25" width="200" height="70">
+                  <div 
+                    className="text-center text-gray-700 transform -rotate-1"
+                    style={{
+                      fontFamily: 'Comic Sans MS, Kalam, cursive',
+                      fontSize: '16px',
+                      fontWeight: '400',
+                      letterSpacing: '0.5px',
+                      lineHeight: '1.2'
+                    }}
+                  >
+                    "How will I find this<br />
+                    solopreneur post<br />
+                    among 500+ posts?"
+                  </div>
+                </foreignObject>
+                
+                {/* Filter for rough edges */}
                 <defs>
-                  <filter id="rough">
-                    <feTurbulence baseFrequency="0.04" numOctaves="3" result="noise"/>
-                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="1"/>
+                  <filter id="thoughtBubbleRough">
+                    <feTurbulence baseFrequency="0.02" numOctaves="2" result="noise"/>
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5"/>
                   </filter>
                 </defs>
               </svg>
