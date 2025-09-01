@@ -33,42 +33,57 @@ const Hero = () => {
           <div className="hidden lg:flex flex-col justify-center items-center">
             {/* Handwritten text above the image */}
             <div className="mb-6 relative">
-              <p 
-                className="text-lg text-gray-600 transform -rotate-2 relative z-10"
-                style={{
-                  fontFamily: 'Comic Sans MS, Kalam, cursive',
-                  fontWeight: '400',
-                  letterSpacing: '0.5px',
-                  lineHeight: '1.3'
-                }}
-              >
-                "How will I find this<br />
-                solopreneur post<br />
-                among 500+ posts?"
-              </p>
-              {/* Hand-drawn style underline */}
               <svg 
-                className="absolute -bottom-2 left-0 w-full h-3 z-0" 
-                viewBox="0 0 200 12" 
+                className="text-gray-700" 
+                width="280" 
+                height="120" 
+                viewBox="0 0 280 120" 
                 fill="none" 
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path 
-                  d="M2 8c20-3 40-5 60-2s40 8 60 5 40-8 60-5" 
-                  stroke="#6b7280" 
-                  strokeWidth="2" 
-                  strokeLinecap="round"
-                  opacity="0.6"
-                  style={{
-                    filter: 'url(#rough)'
-                  }}
-                />
                 <defs>
-                  <filter id="rough">
+                  <filter id="roughPaper" x="0%" y="0%" width="100%" height="100%">
                     <feTurbulence baseFrequency="0.04" numOctaves="3" result="noise"/>
-                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="1"/>
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.5"/>
                   </filter>
                 </defs>
+                
+                {/* Handwritten text as SVG paths - rough and sketchy */}
+                <g fill="currentColor" filter="url(#roughPaper)">
+                  {/* "How will I find this" */}
+                  <path d="M15 25 Q18 22 22 24 Q25 26 28 24 Q32 22 35 25 Q38 28 42 26 L45 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                  <text x="15" y="30" fontSize="16" fontFamily="Kalam, cursive" transform="rotate(-1)" fill="currentColor">
+                    "How will I find this
+                  </text>
+                  
+                  {/* "solopreneur post" */}
+                  <text x="25" y="55" fontSize="16" fontFamily="Kalam, cursive" transform="rotate(1)" fill="currentColor">
+                    solopreneur post
+                  </text>
+                  
+                  {/* "among 500+ posts?" */}
+                  <text x="20" y="80" fontSize="16" fontFamily="Kalam, cursive" transform="rotate(-0.5)" fill="currentColor">
+                    among 500+ posts?"
+                  </text>
+                  
+                  {/* Rough underlines and scribbles */}
+                  <path d="M15 85 Q30 88 45 85 Q60 82 75 85 Q90 88 105 85 Q120 82 135 85 Q150 88 165 85" 
+                        stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.4"/>
+                  
+                  {/* Additional rough strokes for authenticity */}
+                  <path d="M180 40 Q185 38 190 42" stroke="currentColor" strokeWidth="1" fill="none" strokeLinecap="round" opacity="0.3"/>
+                  <path d="M175 65 Q180 62 185 66 Q190 68 195 65" stroke="currentColor" strokeWidth="1" fill="none" strokeLinecap="round" opacity="0.3"/>
+                  
+                  {/* Rough question mark emphasis */}
+                  <circle cx="200" cy="78" r="1.5" fill="currentColor" opacity="0.6"/>
+                  <path d="M195 75 Q198 72 202 75" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.6"/>
+                </g>
+                
+                {/* Additional rough texture overlay */}
+                <g opacity="0.1">
+                  <path d="M10 15 L270 15 M10 35 L270 35 M10 55 L270 55 M10 75 L270 75 M10 95 L270 95" 
+                        stroke="currentColor" strokeWidth="0.5" strokeDasharray="2,3"/>
+                </g>
               </svg>
             </div>
             
