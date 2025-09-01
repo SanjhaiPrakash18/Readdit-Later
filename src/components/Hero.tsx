@@ -56,10 +56,6 @@ const Hero = () => {
                     strokeWidth="2.5" 
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    style={{
-                      strokeDasharray: "none",
-                      filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.1))"
-                    }}
                   />
                   
                   {/* Hand-drawn small thought bubbles */}
@@ -73,8 +69,7 @@ const Hero = () => {
                     strokeLinecap="round"
                     style={{
                       transform: "rotate(-5deg)",
-                      transformOrigin: "98px 125px",
-                      filter: "drop-shadow(1px 1px 2px rgba(0,0,0,0.1))"
+                      transformOrigin: "98px 125px"
                     }}
                   />
                   <circle 
@@ -87,8 +82,7 @@ const Hero = () => {
                     strokeLinecap="round"
                     style={{
                       transform: "rotate(8deg)",
-                      transformOrigin: "78px 135px",
-                      filter: "drop-shadow(1px 1px 2px rgba(0,0,0,0.1))"
+                      transformOrigin: "78px 135px"
                     }}
                   />
                   <circle 
@@ -101,8 +95,7 @@ const Hero = () => {
                     strokeLinecap="round"
                     style={{
                       transform: "rotate(-3deg)",
-                      transformOrigin: "63px 142px",
-                      filter: "drop-shadow(1px 1px 2px rgba(0,0,0,0.1))"
+                      transformOrigin: "63px 142px"
                     }}
                   />
                 </svg>
@@ -233,7 +226,90 @@ const Hero = () => {
             </div>
 
             {/* Right side - Happy Man SVG (hidden on mobile) */}
-            <div className="hidden lg:flex justify-center">
+            <div className="hidden lg:flex flex-col justify-center items-center">
+              {/* Happy thought bubble with handwritten text */}
+              <div className="mb-6 relative">
+                <svg 
+                  width="300" 
+                  height="160" 
+                  viewBox="0 0 300 160" 
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{ transform: 'scaleX(-1)' }}
+                >
+                  {/* Hand-drawn thought bubble main body (mirrored) */}
+                  <path 
+                    d="M25 75 C20 55, 40 30, 80 35 C120 25, 180 28, 220 40 C250 45, 265 60, 260 75 C265 90, 245 105, 210 108 C170 115, 120 112, 80 105 C45 100, 22 90, 25 75 Z" 
+                    fill="white" 
+                    stroke="#374151" 
+                    strokeWidth="2.5" 
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  
+                  {/* Hand-drawn small thought bubbles (mirrored) */}
+                  <circle 
+                    cx="98" 
+                    cy="125" 
+                    r="8" 
+                    fill="white"
+                    stroke="#374151" 
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    style={{
+                      transform: "rotate(5deg)",
+                      transformOrigin: "98px 125px"
+                    }}
+                  />
+                  <circle 
+                    cx="78" 
+                    cy="135" 
+                    r="5" 
+                    fill="white"
+                    stroke="#374151" 
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    style={{
+                      transform: "rotate(-8deg)",
+                      transformOrigin: "78px 135px"
+                    }}
+                  />
+                  <circle 
+                    cx="63" 
+                    cy="142" 
+                    r="3" 
+                    fill="white"
+                    stroke="#374151" 
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    style={{
+                      transform: "rotate(3deg)",
+                      transformOrigin: "63px 142px"
+                    }}
+                  />
+                </svg>
+                
+                {/* Happy handwritten text overlay */}
+                <div 
+                  className="absolute inset-0 flex items-center justify-center px-6"
+                  style={{
+                    fontFamily: 'Margarine, cursive',
+                    fontSize: '15px',
+                    lineHeight: '1.4',
+                    color: '#374151',
+                    fontWeight: '400',
+                    textAlign: 'center',
+                    transform: 'scaleX(-1) rotate(2deg)',
+                    marginTop: '-20px'
+                  }}
+                >
+                  <div>
+                    <div>"Haha, I can't believe</div>
+                    <div>my eyes, I found the post</div>
+                    <div>I saved a month ago"</div>
+                  </div>
+                </div>
+              </div>
+              
               <img
                 src="/Happy Man Readdit Later.svg"
                 alt="Happy Man - After using Readdit Later"
