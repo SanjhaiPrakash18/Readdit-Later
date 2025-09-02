@@ -169,8 +169,7 @@ const Hero = () => {
 
               {/* Subheadline */}
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Never lose track of great Reddit content again! Save posts directly from Reddit, 
-                sync them across devices, and browse in a clean, distraction-free view.
+                Supercharge your Reddit experience with lightning-fast search and instant filtering. Readdit Later makes managing saved posts 10x faster and effortless.
               </p>
 
               {/* CTA Buttons */}
