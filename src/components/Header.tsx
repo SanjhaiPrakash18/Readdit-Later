@@ -42,7 +42,7 @@ const Header = () => {
       '#hero',
       '.hero',
       '[data-section="hero"]',
-      'section.py-20.lg\\:py-32',
+      'section.py-0.lg\\:py-0',
       'main > section:first-child',
       'main section:first-of-type'
     ];
