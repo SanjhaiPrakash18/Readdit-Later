@@ -34,7 +34,7 @@ const Footer = () => {
             >
               Chrome Store <ExternalLink className="h-3 w-3" />
             </a>
-            <span className="text-xs">Version 1.0.16</span>
+            <span className="text-xs">Version 1.0.18</span>
             <span className="text-xs">© 2025 Readdit Later</span>
           </div>
         </div>
