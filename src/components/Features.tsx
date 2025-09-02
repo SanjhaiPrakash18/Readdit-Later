@@ -27,12 +27,6 @@ const features = [
     benefit: "Manage hundreds of posts instantly"
   },
   {
-    icon: FolderOpen,
-    title: "Group by Subreddits & Labels",
-    description: "Automatically organize your saved posts by subreddit or custom labels for easy browsing and discovery.",
-    benefit: "Find content by category instantly"
-  },
-  {
     icon: Tag,
     title: "Custom Labels",
     description: "Create and assign custom labels to your saved posts for personalized organization that fits your workflow.",
@@ -43,6 +37,12 @@ const features = [
     title: "Personal Notes",
     description: "Add your own notes to saved posts so you never forget why you saved them or what you found interesting.",
     benefit: "Remember why it mattered"
+  },
+  {
+    icon: FolderOpen,
+    title: "Group by Subreddits, Labels & Personal Notes",
+    description: "Automatically organize your saved posts by subreddit, custom labels and personal notes for easy browsing and discovery.",
+    benefit: "Find content by category instantly"
   }
 ];
 
