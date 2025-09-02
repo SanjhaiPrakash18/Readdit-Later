@@ -23,7 +23,7 @@ const comparisonFeatures = [
     readditLater: "Automatic grouping by subreddits and custom labels",
   },
   {
-    reddit: "No way to add personal tags or categories",
+    reddit: "No way to add personal tags or notes",
     readditLater: "Create custom labels and add notes to remember why you saved each post",
   },
   {
