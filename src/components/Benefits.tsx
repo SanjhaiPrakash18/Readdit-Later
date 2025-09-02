@@ -20,7 +20,7 @@ const comparisonFeatures = [
   },
   {
     reddit: "No grouping or organization options",
-    readditLater: "Automatic grouping by subreddits and custom labels",
+    readditLater: "Automatic grouping by subreddits, custom labels and notes",
   },
   {
     reddit: "No way to add personal tags or notes",
