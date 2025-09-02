@@ -161,9 +161,9 @@ const Hero = () => {
                   alt="Bookmark"
                   className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 inline-block transform rotate-0"
                 />
-                Find Your Saved Reddit Posts{" "}
+                Find Your Saved{" "}
                 <span className="gradient-primary bg-clip-text text-transparent">
-                  in Seconds
+                  Reddit Posts in Seconds
                 </span>
               </h1>
 
