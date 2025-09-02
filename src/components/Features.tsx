@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { RefreshCw, Search, BarChart3, MousePointer, FolderOpen, Tag } from "lucide-react";
+import { RefreshCw, Search, BarChart3, MousePointer, FolderOpen, Tag, StickyNote } from "lucide-react";
 
 const features = [
   {
@@ -37,6 +37,12 @@ const features = [
     title: "Custom Labels",
     description: "Create and assign custom labels to your saved posts for personalized organization that fits your workflow.",
     benefit: "Organize your way"
+  },
+  {
+    icon: StickyNote,
+    title: "Personal Notes",
+    description: "Add your own notes to saved posts so you never forget why you saved them or what you found interesting.",
+    benefit: "Remember why it mattered"
   }
 ];
 
