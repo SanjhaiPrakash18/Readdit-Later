@@ -7,7 +7,7 @@ const Header = () => {
     { name: "Features", href: "#features" },
     { name: "Benefits", href: "#benefits" },
     { name: "Pricing", href: "#pricing" },
-    { name: "Tutorials", href: "#tutorials" },
+    { name: "Tutorials", href: "https://www.youtube.com/watch?v=-iUOSrM-6Mo&list=PLksjy9AasGEyQBG8AeYqN99jtgTIrO-nu&ab_channel=SanjhaiPrakashB" },
   ];
 
   const socialLinks = [
@@ -34,7 +34,10 @@ const Header = () => {
   ];
 
   const handleNavClick = (href: string) => {
-    if (href.startsWith('/')) {
+    if (href.startsWith('http')) {
+      // Open external links in new tab
+      window.open(href, '_blank');
+    } else if (href.startsWith('/')) {
       // Navigate to different page
       window.location.href = href;
     } else {
