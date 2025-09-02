@@ -48,71 +48,54 @@ const Hero = () => {
                   viewBox="0 0 300 160" 
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  {/* Hand-drawn cloudy thought bubble main body */}
+                  {/* Hand-drawn thought bubble main body */}
                   <path 
-                    d="M28 78 C22 62, 35 38, 45 32 C55 28, 68 35, 78 33 C88 31, 98 29, 108 32 C118 35, 128 30, 138 33 C148 36, 158 32, 168 35 C178 38, 188 34, 198 38 C208 42, 218 39, 225 45 C232 51, 238 58, 242 65 C246 72, 248 79, 245 86 C242 93, 238 99, 232 104 C226 109, 218 112, 210 110 C202 108, 194 112, 186 110 C178 108, 170 112, 162 109 C154 106, 146 110, 138 108 C130 106, 122 109, 114 107 C106 105, 98 108, 90 106 C82 104, 74 107, 66 105 C58 103, 50 106, 42 102 C34 98, 28 92, 26 85 C24 82, 26 80, 28 78 Z" 
+                    d="M25 75 C20 55, 40 30, 80 35 C120 25, 180 28, 220 40 C250 45, 265 60, 260 75 C265 90, 245 105, 210 108 C170 115, 120 112, 80 105 C45 100, 22 90, 25 75 Z" 
                     fill="white" 
                     stroke="#374151" 
-                    strokeWidth="2.8" 
+                    strokeWidth="2.5" 
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    style={{
-                      filter: "url(#roughen)"
-                    }}
                   />
                   
-                  {/* SVG filter for hand-drawn effect */}
-                  <defs>
-                    <filter id="roughen">
-                      <feTurbulence baseFrequency="0.04" numOctaves="3" result="noise" seed="2"/>
-                      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5"/>
-                    </filter>
-                  </defs>
-                  
-                  {/* Hand-drawn small cloudy thought bubbles */}
-                  <ellipse 
+                  {/* Hand-drawn small thought bubbles */}
+                  <circle 
                     cx="98" 
                     cy="125" 
-                    rx="9" 
-                    ry="7" 
+                    r="8" 
                     fill="white"
                     stroke="#374151" 
-                    strokeWidth="2.8"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     style={{
-                      transform: "rotate(-8deg)",
-                      transformOrigin: "98px 125px",
-                      filter: "url(#roughen)"
+                      transform: "rotate(-5deg)",
+                      transformOrigin: "98px 125px"
                     }}
                   />
-                  <ellipse 
+                  <circle 
                     cx="78" 
-                    cy="136" 
-                    rx="6" 
-                    ry="4" 
+                    cy="135" 
+                    r="5" 
                     fill="white"
                     stroke="#374151" 
-                    strokeWidth="2.8"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     style={{
-                      transform: "rotate(12deg)",
-                      transformOrigin: "78px 136px",
-                      filter: "url(#roughen)"
+                      transform: "rotate(8deg)",
+                      transformOrigin: "78px 135px"
                     }}
                   />
-                  <ellipse 
-                    cx="64" 
-                    cy="143" 
-                    rx="4" 
-                    ry="2.5" 
+                  <circle 
+                    cx="63" 
+                    cy="142" 
+                    r="3" 
                     fill="white"
                     stroke="#374151" 
-                    strokeWidth="2.8"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     style={{
-                      transform: "rotate(-6deg)",
-                      transformOrigin: "64px 143px",
-                      filter: "url(#roughen)"
+                      transform: "rotate(-3deg)",
+                      transformOrigin: "63px 142px"
                     }}
                   />
                 </svg>
@@ -253,71 +236,54 @@ const Hero = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   style={{ transform: 'scaleX(-1)' }}
                 >
-                  {/* Hand-drawn cloudy thought bubble main body (mirrored) */}
+                  {/* Hand-drawn thought bubble main body (mirrored) */}
                   <path 
-                    d="M28 78 C22 62, 35 38, 45 32 C55 28, 68 35, 78 33 C88 31, 98 29, 108 32 C118 35, 128 30, 138 33 C148 36, 158 32, 168 35 C178 38, 188 34, 198 38 C208 42, 218 39, 225 45 C232 51, 238 58, 242 65 C246 72, 248 79, 245 86 C242 93, 238 99, 232 104 C226 109, 218 112, 210 110 C202 108, 194 112, 186 110 C178 108, 170 112, 162 109 C154 106, 146 110, 138 108 C130 106, 122 109, 114 107 C106 105, 98 108, 90 106 C82 104, 74 107, 66 105 C58 103, 50 106, 42 102 C34 98, 28 92, 26 85 C24 82, 26 80, 28 78 Z" 
+                    d="M25 75 C20 55, 40 30, 80 35 C120 25, 180 28, 220 40 C250 45, 265 60, 260 75 C265 90, 245 105, 210 108 C170 115, 120 112, 80 105 C45 100, 22 90, 25 75 Z" 
                     fill="white" 
                     stroke="#374151" 
-                    strokeWidth="2.8" 
+                    strokeWidth="2.5" 
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    style={{
-                      filter: "url(#roughen2)"
-                    }}
                   />
                   
-                  {/* SVG filter for hand-drawn effect (different seed) */}
-                  <defs>
-                    <filter id="roughen2">
-                      <feTurbulence baseFrequency="0.04" numOctaves="3" result="noise" seed="5"/>
-                      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5"/>
-                    </filter>
-                  </defs>
-                  
-                  {/* Hand-drawn small cloudy thought bubbles (mirrored) */}
-                  <ellipse 
+                  {/* Hand-drawn small thought bubbles (mirrored) */}
+                  <circle 
                     cx="98" 
                     cy="125" 
-                    rx="9" 
-                    ry="7" 
+                    r="8" 
                     fill="white"
                     stroke="#374151" 
-                    strokeWidth="2.8"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     style={{
-                      transform: "rotate(10deg)",
-                      transformOrigin: "98px 125px",
-                      filter: "url(#roughen2)"
+                      transform: "rotate(5deg)",
+                      transformOrigin: "98px 125px"
                     }}
                   />
-                  <ellipse 
+                  <circle 
                     cx="78" 
-                    cy="136" 
-                    rx="6" 
-                    ry="4" 
+                    cy="135" 
+                    r="5" 
                     fill="white"
                     stroke="#374151" 
-                    strokeWidth="2.8"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     style={{
-                      transform: "rotate(-14deg)",
-                      transformOrigin: "78px 136px",
-                      filter: "url(#roughen2)"
+                      transform: "rotate(-8deg)",
+                      transformOrigin: "78px 135px"
                     }}
                   />
-                  <ellipse 
-                    cx="64" 
-                    cy="143" 
-                    rx="4" 
-                    ry="2.5" 
+                  <circle 
+                    cx="63" 
+                    cy="142" 
+                    r="3" 
                     fill="white"
                     stroke="#374151" 
-                    strokeWidth="2.8"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     style={{
-                      transform: "rotate(8deg)",
-                      transformOrigin: "64px 143px",
-                      filter: "url(#roughen2)"
+                      transform: "rotate(3deg)",
+                      transformOrigin: "63px 142px"
                     }}
                   />
                 </svg>
