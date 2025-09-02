@@ -115,9 +115,9 @@ const Hero = () => {
                   }}
                 >
                   <div>
-                    <div>"How will I find this</div>
+                    <div>How will I find this</div>
                     <div>solopreneur post</div>
-                    <div>among 500+ posts?"</div>
+                    <div>among 500+ posts?</div>
                   </div>
                 </div>
               </div>
@@ -303,9 +303,9 @@ const Hero = () => {
                   }}
                 >
                   <div>
-                    <div>"Haha, I can't believe</div>
+                    <div>Haha, I can't believe</div>
                     <div>my eyes, I found the post</div>
-                    <div>I saved a month ago"</div>
+                    <div>I saved a month ago</div>
                   </div>
                 </div>
               </div>
