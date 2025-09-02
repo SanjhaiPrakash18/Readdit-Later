@@ -8,8 +8,8 @@ const features = [
   "Powerful Search & Filters",
   "Bulk Actions",
   "Statistics Dashboard",
-  "Group by Subreddits & Labels",
-  "Custom Labels",
+  "Group by Subreddits, Labels & Personal Notes",
+  "Custom Labels & Personal Notes",
   "Clean Reading Experience",
   "Privacy Focused",
   "Regular Updates"
