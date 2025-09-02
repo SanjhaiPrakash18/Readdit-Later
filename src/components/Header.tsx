@@ -4,6 +4,7 @@ import { Menu } from "lucide-react";
 
 const Header = () => {
   const navItems = [
+    { name: "Hero", href: "#hero" },
     { name: "Features", href: "#features" },
     { name: "Benefits", href: "#benefits" },
     { name: "Pricing", href: "#pricing" },
