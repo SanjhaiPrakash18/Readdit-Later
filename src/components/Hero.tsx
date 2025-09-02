@@ -302,9 +302,9 @@ const Hero = () => {
                   }}
                 >
                   <div>
-                    <div>Haha, I can't believe</div>
-                    <div>my eyes, I found the post</div>
-                    <div>I saved a month ago</div>
+                    <div>Wait, what? I just found</div>
+                    <div>a post I saved 2 months ago</div>
+                    <div>without any scrolling!</div>
                   </div>
                 </div>
               </div>
