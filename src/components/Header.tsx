@@ -7,6 +7,7 @@ const Header = () => {
     { name: "Features", href: "#features" },
     { name: "Benefits", href: "#benefits" },
     { name: "Pricing", href: "#pricing" },
+    { name: "Tutorials", href: "/tutorials" },
   ];
 
   const socialLinks = [
@@ -33,7 +34,13 @@ const Header = () => {
   ];
 
   const handleNavClick = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('/')) {
+      // Navigate to different page
+      window.location.href = href;
+    } else {
+      // Scroll to section on current page
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const handleLogoClick = () => {
