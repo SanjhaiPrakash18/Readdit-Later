@@ -163,7 +163,7 @@ const Hero = () => {
                 />
                 Find Your Saved Reddit Posts{" "}
                 <span className="gradient-primary bg-clip-text text-transparent">
-                  in Seconds, Not Minutes
+                  in Seconds
                 </span>
               </h1>
 
