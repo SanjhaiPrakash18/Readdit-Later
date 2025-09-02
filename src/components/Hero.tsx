@@ -304,7 +304,7 @@ const Hero = () => {
                   <div>
                     <div>Wait, what? I just found</div>
                     <div>a post I saved 2 months ago</div>
-                    <div>without any scrolling!</div>
+                    <div>without scrolling!</div>
                   </div>
                 </div>
               </div>
