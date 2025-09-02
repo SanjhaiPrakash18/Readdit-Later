@@ -323,7 +323,7 @@ const Hero = () => {
             <div className="aspect-video bg-muted rounded-lg flex items-center justify-center overflow-hidden relative group">
               <video
                 ref={videoRef}
-                src="/Land Page Read Lat 2.mp4"
+                src="/Land Page Read Lat 3.mp4"
                 loop
                 autoPlay
                 muted
