@@ -24,7 +24,7 @@ const comparisonFeatures = [
   },
   {
     reddit: "No way to add personal tags or categories",
-    readditLater: "Create and assign custom labels for personalized organization",
+    readditLater: "Create custom labels and add notes to remember why you saved each post",
   },
   {
     reddit: "Basic list view with minimal information",
