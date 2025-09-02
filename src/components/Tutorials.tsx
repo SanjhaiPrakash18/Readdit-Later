@@ -1,49 +1,49 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Tutorials = () => {
-  // Placeholder tutorial videos - you can replace these with your actual YouTube video URLs
+  // Tutorial videos for Readdit Later
   const tutorialVideos = [
     {
       id: 1,
       title: "Getting Started with Readdit Later",
       description: "Learn how to install and set up the Readdit Later Chrome extension",
-      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg`
+      videoId: "your-video-id-here", // Replace with actual YouTube video ID
+      thumbnail: `https://img.youtube.com/vi/your-video-id-here/maxresdefault.jpg`
     },
     {
       id: 2,
       title: "Saving and Organizing Posts",
       description: "Master the art of saving and categorizing your favorite Reddit posts",
-      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg`
+      videoId: "your-video-id-here", // Replace with actual YouTube video ID
+      thumbnail: `https://img.youtube.com/vi/your-video-id-here/maxresdefault.jpg`
     },
     {
       id: 3,
       title: "Advanced Features & Tips",
       description: "Discover pro tips and advanced features to maximize your productivity",
-      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg`
+      videoId: "your-video-id-here", // Replace with actual YouTube video ID
+      thumbnail: `https://img.youtube.com/vi/your-video-id-here/maxresdefault.jpg`
     },
     {
       id: 4,
       title: "Syncing Across Devices",
       description: "How to access your saved posts across multiple devices seamlessly",
-      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg`
+      videoId: "your-video-id-here", // Replace with actual YouTube video ID
+      thumbnail: `https://img.youtube.com/vi/your-video-id-here/maxresdefault.jpg`
     },
     {
       id: 5,
       title: "Troubleshooting Common Issues",
       description: "Quick solutions to common problems and FAQs",
-      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg`
+      videoId: "your-video-id-here", // Replace with actual YouTube video ID
+      thumbnail: `https://img.youtube.com/vi/your-video-id-here/maxresdefault.jpg`
     },
     {
       id: 6,
       title: "Best Practices Guide",
       description: "Learn the best practices for managing your Reddit content library",
-      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg`
+      videoId: "your-video-id-here", // Replace with actual YouTube video ID
+      thumbnail: `https://img.youtube.com/vi/your-video-id-here/maxresdefault.jpg`
     }
   ];
 
