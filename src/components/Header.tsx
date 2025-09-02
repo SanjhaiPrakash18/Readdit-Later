@@ -7,7 +7,7 @@ const Header = () => {
     { name: "Features", href: "#features" },
     { name: "Benefits", href: "#benefits" },
     { name: "Pricing", href: "#pricing" },
-    { name: "Tutorials", href: "/tutorials" },
+    { name: "Tutorials", href: "#tutorials" },
   ];
 
   const socialLinks = [
