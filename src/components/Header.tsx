@@ -37,16 +37,40 @@ const Header = () => {
   };
 
   const handleLogoClick = () => {
-    // Navigate to hero section - looks for section with py-20 lg:py-32 classes (your hero section)
-    const heroSection = document.querySelector('section.py-20.lg\\:py-32') || 
-                       document.querySelector('#hero') || 
-                       document.querySelector('.hero') || 
-                       document.querySelector('main');
+    // Try multiple common selectors for hero section
+    const heroSelectors = [
+      '#hero',
+      '.hero',
+      '[data-section="hero"]',
+      'section.py-20.lg\\:py-32',
+      'main > section:first-child',
+      'main section:first-of-type'
+    ];
+    
+    let heroSection = null;
+    
+    // Try each selector until we find the hero section
+    for (const selector of heroSelectors) {
+      heroSection = document.querySelector(selector);
+      if (heroSection) break;
+    }
+    
+    // If still not found, try to find the first main section
+    if (!heroSection) {
+      heroSection = document.querySelector('main');
+    }
+    
     if (heroSection) {
-      heroSection.scrollIntoView({ behavior: 'smooth' });
+      heroSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
     } else {
-      // If no hero section is found, scroll to top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Fallback to scroll to top
+      window.scrollTo({ 
+        top: 0, 
+        behavior: 'smooth' 
+      });
     }
   };
 
@@ -54,10 +78,19 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       {/* Responsive: 2 columns on mobile, 3 columns on md+ */}
       <div className="container h-16 grid grid-cols-2 md:grid-cols-3 items-center">
-        {/* Logo Left (always left column) - Now clickable */}
+        {/* Logo Left (always left column) - Clickable to go to hero */}
         <div 
-          className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
+          className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity select-none"
           onClick={handleLogoClick}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              handleLogoClick();
+            }
+          }}
+          aria-label="Go to home section"
         >
           <img 
             src="/lovable-uploads/71d413d8-e032-432c-b651-41c88e16fcc0.png" 
