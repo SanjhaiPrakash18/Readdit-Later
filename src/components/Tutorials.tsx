@@ -4,8 +4,8 @@ const Tutorials = () => {
   const videos = [
     {
       id: "VGo-OdXUMD0", // Replace with your actual video ID
-      title: "Getting Started with Readdit Later",
-      description: "Learn how to install and set up the extension"
+      title: "Readdit Later Tutorial Simple Onboarding Guide",
+      description: "Quick setup guide for the Readdit Later Chrome extension - organize your saved Reddit posts in minutes!"
     },
     {
       id: "dQw4w9WgXcQ", // Replace with your actual video ID  
