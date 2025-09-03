@@ -1,0 +1,73 @@
+import { Play } from "lucide-react";
+
+const Tutorials = () => {
+  const videos = [
+    {
+      id: "dQw4w9WgXcQ", // Replace with your actual video ID
+      title: "Getting Started with Readdit Later",
+      description: "Learn how to install and set up the extension"
+    },
+    {
+      id: "dQw4w9WgXcQ", // Replace with your actual video ID  
+      title: "Advanced Features Tutorial",
+      description: "Discover advanced features and tips"
+    },
+    {
+      id: "dQw4w9WgXcQ", // Replace with your actual video ID
+      title: "Best Practices Guide",
+      description: "How to get the most out of Readdit Later"
+    }
+  ];
+
+  const handleVideoClick = (videoId: string) => {
+    window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+  };
+
+  return (
+    <section id="tutorials" className="py-20 bg-muted/50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Video Tutorials
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Learn how to use Readdit Later with our comprehensive video guides
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {videos.map((video, index) => (
+            <div
+              key={index}
+              className="group cursor-pointer bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              onClick={() => handleVideoClick(video.id)}
+            >
+              <div className="relative aspect-video bg-muted">
+                <img
+                  src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                  alt={video.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                  <div className="bg-white/90 rounded-full p-4 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                    <Play className="h-8 w-8 text-primary fill-primary" />
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">
+                  {video.title}
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  {video.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Tutorials;

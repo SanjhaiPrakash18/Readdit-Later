@@ -7,7 +7,7 @@ const Header = () => {
     { name: "Features", href: "#features" },
     { name: "Benefits", href: "#benefits" },
     { name: "Pricing", href: "#pricing" },
-    { name: "Tutorials", href: "https://www.youtube.com/watch?v=-iUOSrM-6Mo&list=PLksjy9AasGEyQBG8AeYqN99jtgTIrO-nu&ab_channel=SanjhaiPrakashB" },
+    { name: "Tutorials", href: "#tutorials" },
   ];
 
   const socialLinks = [
