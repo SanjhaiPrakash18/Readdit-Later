@@ -24,13 +24,16 @@ const Tutorials = () => {
   };
 
   return (
-    <section id="tutorials" className="py-20 bg-muted/50">
-      <div className="container mx-auto px-4">
+    <section id="tutorials" className="py-20 lg:py-32 bg-muted/30">
+      <div className="container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Video Tutorials
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            Video{" "}
+            <span className="gradient-primary bg-clip-text text-transparent">
+              Tutorials
+            </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Learn how to use Readdit Later with our comprehensive video guides
           </p>
         </div>
