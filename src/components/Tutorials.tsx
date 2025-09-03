@@ -3,7 +3,7 @@ import { Play } from "lucide-react";
 const Tutorials = () => {
   const videos = [
     {
-      id: "dQw4w9WgXcQ", // Replace with your actual video ID
+      id: "VGo-OdXUMD0", // Replace with your actual video ID
       title: "Getting Started with Readdit Later",
       description: "Learn how to install and set up the extension"
     },
