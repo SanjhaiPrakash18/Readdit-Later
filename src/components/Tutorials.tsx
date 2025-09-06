@@ -8,9 +8,9 @@ const Tutorials = () => {
       description: "Quick setup guide for the Readdit Later Chrome extension - organize your saved Reddit posts in minutes!"
     },
     {
-      id: "dQw4w9WgXcQ", // Replace with your actual video ID  
-      title: "Advanced Features Tutorial",
-      description: "Discover advanced features and tips"
+      id: "cwsK7Za8NMg", // Replace with your actual video ID  
+      title: "Readdit Later Filtering Tutorial",
+      description: "This is a tutorial on the Readdit Later Chrome extension showing how to use filters in Readdit Later to filter your posts"
     },
     {
       id: "dQw4w9WgXcQ", // Replace with your actual video ID
