@@ -233,15 +233,15 @@ const Hero = () => {
               {/* Happy thought bubble with handwritten text */}
               <div className="mb-6 relative">
                 <svg 
-                  width="300" 
-                  height="160" 
-                  viewBox="0 0 300 160" 
+                  width="320" 
+                  height="180" 
+                  viewBox="0 0 320 180" 
                   xmlns="http://www.w3.org/2000/svg"
                   style={{ transform: 'scaleX(-1)' }}
                 >
                   {/* Hand-drawn thought bubble main body (mirrored) */}
                   <path 
-                    d="M25 75 C20 55, 40 30, 80 35 C120 25, 180 28, 220 40 C250 45, 265 60, 260 75 C265 90, 245 105, 210 108 C170 115, 120 112, 80 105 C45 100, 22 90, 25 75 Z" 
+                    d="M30 85 C25 60, 50 30, 95 35 C140 25, 210 28, 255 45 C290 50, 310 70, 305 85 C310 105, 285 125, 245 128 C195 135, 140 132, 95 125 C55 120, 27 105, 30 85 Z" 
                     fill="white" 
                     stroke="#374151" 
                     strokeWidth="2.5" 
@@ -251,58 +251,58 @@ const Hero = () => {
                   
                   {/* Hand-drawn small thought bubbles (mirrored) */}
                   <circle 
-                    cx="98" 
-                    cy="125" 
-                    r="8" 
+                    cx="115" 
+                    cy="145" 
+                    r="9" 
                     fill="white"
                     stroke="#374151" 
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     style={{
                       transform: "rotate(5deg)",
-                      transformOrigin: "98px 125px"
+                      transformOrigin: "115px 145px"
                     }}
                   />
                   <circle 
-                    cx="78" 
-                    cy="135" 
-                    r="5" 
+                    cx="90" 
+                    cy="155" 
+                    r="6" 
                     fill="white"
                     stroke="#374151" 
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     style={{
                       transform: "rotate(-8deg)",
-                      transformOrigin: "78px 135px"
+                      transformOrigin: "90px 155px"
                     }}
                   />
                   <circle 
-                    cx="63" 
-                    cy="142" 
-                    r="3" 
+                    cx="70" 
+                    cy="165" 
+                    r="4" 
                     fill="white"
                     stroke="#374151" 
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     style={{
                       transform: "rotate(3deg)",
-                      transformOrigin: "63px 142px"
+                      transformOrigin: "70px 165px"
                     }}
                   />
                 </svg>
                 
                 {/* Happy handwritten text overlay */}
                 <div 
-                  className="absolute inset-0 flex items-center justify-center px-6"
+                  className="absolute inset-0 flex items-center justify-center px-8"
                   style={{
                     fontFamily: 'Margarine, cursive',
-                    fontSize: '15px',
+                    fontSize: '16px',
                     lineHeight: '1.4',
                     color: '#374151',
                     fontWeight: '400',
                     textAlign: 'center',
                     transform: 'rotate(2deg)',
-                    marginTop: '-20px'
+                    marginTop: '-25px'
                   }}
                 >
                   <div>
