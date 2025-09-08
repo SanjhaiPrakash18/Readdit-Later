@@ -15,7 +15,7 @@ const Tutorials = () => {
     {
       id: "aDc295YCCKI", // Replace with your actual video ID
       title: "Readdit Later Label Adding Tutorial",
-      description: "This is a tutorial on the 'Readdit Later' Chrome extension, showing how to add labels to your saved Reddit posts"
+      description: "This is a tutorial on the Readdit Later Chrome extension, showing how to add labels to your saved Reddit posts"
     }
   ];
 
