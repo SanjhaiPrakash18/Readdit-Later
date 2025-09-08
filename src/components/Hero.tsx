@@ -98,28 +98,24 @@ const Hero = () => {
                       transformOrigin: "63px 142px"
                     }}
                   />
+                  
+                  {/* Text directly in SVG for better positioning */}
+                  <text 
+                    x="142" 
+                    y="60" 
+                    textAnchor="middle"
+                    style={{
+                      fontFamily: 'Margarine, cursive',
+                      fontSize: '14px',
+                      fill: '#374151',
+                      fontWeight: '400'
+                    }}
+                  >
+                    <tspan x="142" dy="0">How will I find this</tspan>
+                    <tspan x="142" dy="18">solopreneur post</tspan>
+                    <tspan x="142" dy="18">among 500+ posts?</tspan>
+                  </text>
                 </svg>
-                
-                {/* Handwritten text overlay */}
-                <div 
-                  className="absolute inset-0 flex items-center justify-center px-6"
-                  style={{
-                    fontFamily: 'Margarine, cursive',
-                    fontSize: '15px',
-                    lineHeight: '1.4',
-                    color: '#374151',
-                    fontWeight: '400',
-                    textAlign: 'center',
-                    transform: 'rotate(-2deg)',
-                    marginTop: '-20px'
-                  }}
-                >
-                  <div>
-                    <div>How will I find this</div>
-                    <div>solopreneur post</div>
-                    <div>among 500+ posts?</div>
-                  </div>
-                </div>
               </div>
               
               <img
@@ -289,28 +285,25 @@ const Hero = () => {
                       transformOrigin: "63px 142px"
                     }}
                   />
+                  
+                  {/* Text directly in SVG for better positioning (compensating for scaleX(-1)) */}
+                  <text 
+                    x="158" 
+                    y="60" 
+                    textAnchor="middle"
+                    style={{
+                      fontFamily: 'Margarine, cursive',
+                      fontSize: '14px',
+                      fill: '#374151',
+                      fontWeight: '400',
+                      transform: 'scaleX(-1)'
+                    }}
+                  >
+                    <tspan x="158" dy="0">Wait, what? I just found</tspan>
+                    <tspan x="158" dy="18">a post I saved 2 months ago</tspan>
+                    <tspan x="158" dy="18">without scrolling!</tspan>
+                  </text>
                 </svg>
-                
-                {/* Happy handwritten text overlay */}
-                <div 
-                  className="absolute inset-0 flex items-center justify-center px-6"
-                  style={{
-                    fontFamily: 'Margarine, cursive',
-                    fontSize: '15px',
-                    lineHeight: '1.4',
-                    color: '#374151',
-                    fontWeight: '400',
-                    textAlign: 'center',
-                    transform: 'rotate(2deg)',
-                    marginTop: '-20px'
-                  }}
-                >
-                  <div>
-                    <div>Wait, what? I just found</div>
-                    <div>a post I saved 2 months ago</div>
-                    <div>without scrolling!</div>
-                  </div>
-                </div>
               </div>
               
               <img
