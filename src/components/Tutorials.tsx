@@ -13,9 +13,9 @@ const Tutorials = () => {
       description: "This is a tutorial on the Readdit Later Chrome extension showing how to use filters in Readdit Later to filter your posts"
     },
     {
-      id: "dQw4w9WgXcQ", // Replace with your actual video ID
-      title: "Best Practices Guide",
-      description: "How to get the most out of Readdit Later"
+      id: "aDc295YCCKI", // Replace with your actual video ID
+      title: "Readdit Later Label Adding Tutorial",
+      description: "This is a tutorial on the 'Readdit Later' Chrome extension, showing how to add labels to your saved Reddit posts"
     }
   ];
 
