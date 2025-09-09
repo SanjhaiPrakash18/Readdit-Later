@@ -16,6 +16,11 @@ const Tutorials = () => {
       id: "aDc295YCCKI", // Replace with your actual video ID
       title: "Readdit Later Label Adding Tutorial",
       description: "This is a tutorial on the Readdit Later Chrome extension, showing how to add labels to your saved Reddit posts"
+    },
+    {
+      id: "3ZroyfoNLX4", // New tutorial video ID
+      title: "Readdit Later: How to Enable Thumbnail Feature",
+      description: "This tutorial for the Readdit Later Chrome extension shows how to enable thumbnails for your saved Reddit posts"
     }
   ];
 
@@ -37,7 +42,6 @@ const Tutorials = () => {
             Learn how to use Readdit Later with our comprehensive video guides
           </p>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {videos.map((video, index) => (
             <div
